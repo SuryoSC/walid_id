@@ -29,23 +29,23 @@ Selamat datang di repositori resmi **Walid Id**, sebuah proyek website rumah sak
 Proyek ini dikembangkan oleh tim pelajar dari [Nama Sekolah], sebagai bagian dari tugas akhir semester:
 
 - Aldyaz Budi Pratama — Fullstack Developer ()
-- 📧 **Email**: aldyaz237629@student.smkn1kandeman.sch.id
-- 🌐 **Instagram** : @al_dyaz
+ 📧 **Email**: aldyaz237629@student.smkn1kandeman.sch.id
+ 🌐 **Instagram** : @al_dyaz
 
 - Ezhar Fausta Gadang Praptama — Fullstack Developer ()
-- 📧 **Email**: ezar237644@student.smkn1kandeman.sch.id
-- 🌐 **Instagram** : @saya_satpol4217
+ 📧 **Email**: ezar237644@student.smkn1kandeman.sch.id
+ 🌐 **Instagram** : @saya_satpol4217
 
 - Muhammad Fakhri Bintang Pratama — Fullstack Developer ()
-- 📧 **Email**: muhfakhri237651@student.smkn1kandeman.sch.id
-- 🌐 **Instagram** : @mhmmdfkhr_
+ 📧 **Email**: muhfakhri237651@student.smkn1kandeman.sch.id
+ 🌐 **Instagram** : @mhmmdfkhr_
 
 - Muhammad Syarif Hidayat — Fullstack Developer ()
-- 📧 **Email**: muhsyarif237653@student.smkn1kandeman.sch.id
-- 🌐 **Instagram** : @m_syarif0511
+ 📧 **Email**: muhsyarif237653@student.smkn1kandeman.sch.id
+ 🌐 **Instagram** : @m_syarif0511
 
 - Suryo Saputro — Fullstack Developer ()
-- 📧 **Email**: suryo237658@student.smkn1kandeman.sch.id
-- 🌐 **Instagram** : @suryox.void
+ 📧 **Email**: suryo237658@student.smkn1kandeman.sch.id
+ 🌐 **Instagram** : @suryox.void
 
 ---
