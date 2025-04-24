@@ -49,3 +49,5 @@ Proyek ini dikembangkan oleh tim pelajar dari [Nama Sekolah], sebagai bagian dar
   - 🌐 **Instagram** : @suryox.void
 
 ---
+
+**Catatan**: Proyek ini masih dalam tahap pengembangan. Feedback, bintang ⭐, dan kontribusi sangat kami hargai!
