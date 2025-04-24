@@ -61,14 +61,6 @@
                     </div>
                 </form>
 
-<<<<<<< HEAD
-      <p class="mb-1">
-        <a href="forgot_password.php">I forgot my password</a>
-      </p>
-      <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
-      </p>
-=======
 
                 <!-- /.social-auth-links -->
 
@@ -81,7 +73,6 @@
             </div>
             <!-- /.login-card-body -->
         </div>
->>>>>>> 28876ec (wlululu)
     </div>
     <!-- /.login-box -->
 
