@@ -32,7 +32,7 @@ Proyek ini dikembangkan oleh tim pelajar dari [Nama Sekolah], sebagai bagian dar
   - 📧 **Email**: aldyaz237629@student.smkn1kandeman.sch.id
   - 🌐 **Instagram** : @al_dyaz
 
-- Ezhar Fausta Gadang Praptama — Fullstack Developer ()
+- Ezar Fausta Gadang Praptama — Fullstack Developer ()
   - 📧 **Email**: ezar237644@student.smkn1kandeman.sch.id
   - 🌐 **Instagram** : @saya_satpol4217
 
