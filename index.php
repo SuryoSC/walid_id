@@ -150,14 +150,14 @@
                         <div class="card-body">
                             <p class="card-text">Janji Temu</p>
                             <i class='bx bx-calendar'></i>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Atur janji anda dengan mendaftar dan dapatkan tiket untuk berobat.</small></p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Cari Dokter</p>
                             <box-icon name='wink-tongue'></box-icon>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Lihat profil dokter yang kami miliki.</small></p>
                         </div>
                     </div>
                 </div>
