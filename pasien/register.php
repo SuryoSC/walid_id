@@ -1,3 +1,26 @@
+<?php
+require '../koneksi.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $conn->real_escape_string($_POST['email']);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+    $stmt = $conn->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
+    $stmt->bind_param("ss", $email, $password);
+
+    if ($stmt->execute()) {
+        echo "Registrasi berhasil. ";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,9 +50,9 @@
             <div class="card-body register-card-body">
                 <p class="login-box-msg">Registrasi Akun</p>
 
-                <form action="../../index.html" method="post">
+                <form action="register.php" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Nama lengkap">
+                        <input type="text" class="form-control" placeholder="Nama lengkap" name="nama">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -37,7 +60,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Tanggal lahir">
+                        <input type="text" class="form-control" placeholder="Tanggal lahir" name="tanggallahir">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <i class="fa fa-calendar"></i>
@@ -45,7 +68,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Email" name="email" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -53,7 +76,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password" name="password" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -61,22 +84,13 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Konfirmasi password">
+                        <input type="password" class="form-control" placeholder="Konfirmasi password" name="cpassword">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="form-group">
-                  <label>Date:</label>
-                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
-                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                </div> -->
                     <div class="row">
                         <div class="col mt-3">
                             <button type="submit" class="btn btn-primary btn-block">Register</button>
