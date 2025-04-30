@@ -13,16 +13,35 @@
   <link rel="stylesheet" href="../assets/theme/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../assets/theme/dist/css/adminlte.min.css">
+<style>
+    
+    .logo{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        border-radius: 50%;
+        margin : auto;
+        margin-bottom: 20px;
+    }
+    .login{
+        width: 100%;
+        margin-bottom:20px;
+    }
+</style>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
+
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href="../../index2.html"><b>Walid.id</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      
+    <div class="logo">
+        <img src="" alt="">
+    </div>
 
       <form action="../../index3.html" method="post">
         <div class="input-group mb-3">
@@ -42,17 +61,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
+          
           <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          <div class="login">
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
           </div>
           <!-- /.col -->
         </div>
