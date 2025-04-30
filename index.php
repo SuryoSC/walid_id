@@ -7,13 +7,25 @@
     <title>Landing Page</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="assets/theme/plugins/fontawesome-free/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/theme/dist/css/adminlte.min.css">
 </head>
 <style>
-    h1,h2,h3,h4,h5,h6{
+    *{
+        font-family: "Josefin Sans", sans-serif;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-size: 19px;
         color: #00BFFF;
     }
@@ -25,6 +37,11 @@
     .fb {
         font-size: 25px;
         font-weight: 500;
+        text-align: left;
+    }
+
+    #janji{
+        text-align: center !important;
     }
 
     span {
@@ -32,27 +49,24 @@
         opacity: 30%;
     }
 
-    main{
+    main {
         display: flex;
         flex-direction: column;
         gap: 60px;
     }
-    
-    .card{
-           
 
-    }
+    .card {}
 </style>
 
 <body>
     <div class="e-container container-xl">
-        <div class="e-header">
+        <header class="e-header">
             <div class="e-kanan">
                 <!-- Navbar -->
                 <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
                     <div class="container">
                         <a href="../../index3.html" class="navbar-brand">
-                            <img src="assets/theme/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                            <img src="assets/img/walid1.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8" width="80px">
                             <span class="brand-text font-weight-light">AdminLTE 3</span>
                         </a>
 
@@ -102,6 +116,8 @@
                                         <!-- End Level two -->
                                     </ul>
                                 </li>
+                                <li><a href="pasien/login.php"><button type="button" class="btn btn-block btn-primary">Log In</button></a></li>
+                                <li><a href="pasien/register.php"><button type="button" class="btn btn-block btn-outline-primary">Sign Up</button></a></li>
                             </ul>
                         </div>
 
@@ -115,47 +131,52 @@
             <div class="e-kiri">
                 <!-- <img src="assets/img/walid.jpg" alt=""> -->
             </div>
-        </div>
+        </header>
         <main>
             <div class="card">
                 <div class="card-group justify-content-evenly">
                     <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">Jadwal Buka</p>
+                            <i class='bx bx-time-five'></i>
+                            <p class="card-text"><small class="text-body-secondary">Senin - Kamis Pagi: Jam 08.00 - 12.00</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Senin - Kamis Sore: Jam 12.30 - 17.00</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Jumat - Minggu Pagi: Jam 08.00 - 12.00</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Jumat - Minggu Sore: Jam 12.30 - 17.00</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Tutup ketika libur</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">Janji Temu</p>
+                            <i class='bx bx-calendar'></i>
                             <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                            <p class="card-text">Cari Dokter</p>
+                            <box-icon name='wink-tongue'></box-icon>
                             <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="services container text-center">
+            <div class="services container">
                 <h2 class="fs-5 text-center">SERVICE</h2>
-                <p class="fb">Service Rumah Sakit Walid</p>
+                <p class="fb text-center">Service Rumah Sakit Walid</p>
                 <p class="text-center"></p>
                 <div class="container text-center">
-                    <div class="row align-items-start">
+                    <div class="row align-items-center">
                         <div class="col">
-                            <img src="assets/img/dokterlagi.png" alt="">
+                            <img src="assets/img/karakterdokter-removebg.png" alt="">
                         </div>
-                        <div class="col d-grid gap-5">
-                            <p class="fb">masalah yang berlarut</p>
-                            <span class="text-start fs-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, aspernatur ad? Sint architecto consequatur atque, debitis iusto, impedit quod, deleniti ea quaerat nesciunt similique dolor odit sit veritatis rem beatae adipisci sapiente perspiciatis harum placeat voluptas deserunt. Ipsum, illum quod.</span>
-                            <button type="button" class="btn btn-block btn-primary">Primary</button>
+                        <div class="col d-grid gap-5 text-start">
+                            <p class="fb text-start">Layanan Rawat Inap</p>
+                            <p class="fb text-start">Layanan Gawat Darurat (UGD)</p>
+                            <p class="fb text-start"> Layanan Penunjang Medis</p>
+                            <p class="fb text-start">Layanan Khusus</p>
                         </div>
                     </div>
                 </div>
@@ -164,11 +185,9 @@
             <div class="container text-center">
                 <div class="row align-items-start">
                     <div class="col">
-                        <h2>Time Table</h2>
-                        <p class="fb">Appointment Schedule</p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit labo1
-                            rum nemo facilis dicta, culpa nobis accusamus fuga voluptate, animi aut cumque. Odit est dolores quae repellendus perferendis. Hic, aspernatur impedit!</span>
-                        <button type="button" class="btn btn-block btn-primary">Primary</button>
+                        <h2>Jadwal Waktu</h2>
+                        <p class="fb" id="janji">Janji Temu</p>
+                        <span>Segera daftarkan diri Anda untuk memperoleh antrean sesuai dengan hari dan jam yang Anda inginkan, sehingga Anda dapat mengatur waktu dengan lebih fleksibel dan memastikan bahwa Anda mendapatkan slot yang paling sesuai dengan jadwal Anda.</span>
                     </div>
                     <div class="col">
                         <img src="assets/img/kalender.png" alt="">
@@ -183,27 +202,30 @@
                     <div class="row align-items-start">
                         <div class="col">
                             <div class="card" style="width: 18rem;">
-                                <img src="assets/img/dokter-preview.png" class="card-img-top" alt="...">
+                                <img src="assets/img/aldyaz-removebg-preview.png" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">dr. Aldyaz Budi Pratama</p>
+                                    <p class="card-text">Keahlian : Umum</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card" style="width: 18rem;">
-                                <img src="assets/img/dokter-preview.png" class="card-img-top" alt="...">
+                                <img src="assets/img/fakhri-removebg-preview.png" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">dr. Muhammad Fakhri Hidayat</p>
+                                    <p class="card-text">Keahlian : Umum</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card" style="width: 18rem;">
-                                <img src="assets/img/dokter-preview.png" class="card-img-top" alt="...">
+                                <img src="assets/img/syarif-removebg-preview.png" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">dr. Muhammad Syarif Hidayat</p>
+                                    <p class="card-text">Keahlian : Umum</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
@@ -214,8 +236,8 @@
         </main>
 
     </div>
-    <div class="e-footer">
-    </div>
+    <footer class="e-footer">
+    </footer>
     </div>
 
     <!-- REQUIRED SCRIPTS -->
@@ -228,6 +250,8 @@
     <script src="assets/theme/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="assets/theme/dist/js/demo.js"></script>
+    <!-- box-icons -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
 
 </html>
