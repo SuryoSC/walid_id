@@ -26,7 +26,7 @@
     h4,
     h5,
     h6 {
-        font-size: 19px;
+        font-size: 16px;
         color: #00BFFF;
     }
 
@@ -35,7 +35,7 @@
     }
 
     .fb {
-        font-size: 25px;
+        font-size: 39px;
         font-weight: 500;
         text-align: left;
     }
@@ -52,10 +52,59 @@
     main {
         display: flex;
         flex-direction: column;
-        gap: 60px;
+        gap: 200px;
     }
 
-    .card {}
+    .card {
+        background-color: #2973B2;
+        color: white;
+    }
+
+    #jjtm{
+        background-color: white;
+        color: #2973B2;
+    }
+
+    button{
+        background-color: #00BFFF;
+    }
+
+    /* box-icon{
+        font-size: 70px;
+    } */
+
+    section{
+        display: flex;
+    }
+
+    .kiris{
+        display: flex;
+        align-items: center;
+    }
+
+    .text{
+        width: 50%;
+    }
+
+    .kanans{
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        /* overflow: hidden; */
+        background-color: #2973B2;
+        border-radius: 50%;
+    }
+
+    .kanans img
+
+    .cardb{
+        background-color:rgba(0, 191, 255, 0.98);
+        width: 80%;
+    }
+
+    i{
+        font-size: 40px;
+    }
 </style>
 
 <body>
@@ -63,21 +112,18 @@
         <header class="e-header">
             <div class="e-kanan">
                 <!-- Navbar -->
-                <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
-                    <div class="container">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center">
+                    <div class="container justify-content-between" style="width: 100%;">
                         <a href="../../index3.html" class="navbar-brand">
                             <img src="assets/img/walid1.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8" width="80px">
-                            <span class="brand-text font-weight-light">AdminLTE 3</span>
+                            <span class="brand-text font-weight-light">Walid ID</span>
                         </a>
 
-                        <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
 
-                        <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+                        <div class="collapse navbar-collapse order-3 justify-content-end" id="navbarCollapse">
                             <!-- Left navbar links -->
                             <ul class="navbar-nav">
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a href="index3.html" class="nav-link">Home</a>
                                 </li>
                                 <li class="nav-item">
@@ -89,33 +135,33 @@
                                         <li><a href="#" class="dropdown-item">Some action </a></li>
                                         <li><a href="#" class="dropdown-item">Some other action</a></li>
 
-                                        <li class="dropdown-divider"></li>
+                                        <li class="dropdown-divider"></li> -->
 
                                         <!-- Level two dropdown-->
-                                        <li class="dropdown-submenu dropdown-hover">
+                                        <!-- <li class="dropdown-submenu dropdown-hover">
                                             <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Hover for action</a>
                                             <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
                                                 <li>
                                                     <a tabindex="-1" href="#" class="dropdown-item">level 2</a>
-                                                </li>
+                                                </li> -->
 
                                                 <!-- Level three dropdown-->
-                                                <li class="dropdown-submenu">
+                                                <!-- <li class="dropdown-submenu">
                                                     <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">level 2</a>
                                                     <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow">
                                                         <li><a href="#" class="dropdown-item">3rd level</a></li>
                                                         <li><a href="#" class="dropdown-item">3rd level</a></li>
                                                     </ul>
-                                                </li>
+                                                </li> -->
                                                 <!-- End Level three -->
 
-                                                <li><a href="#" class="dropdown-item">level 2</a></li>
+                                                <!-- <li><a href="#" class="dropdown-item">level 2</a></li>
                                                 <li><a href="#" class="dropdown-item">level 2</a></li>
                                             </ul>
-                                        </li>
+                                        </li> -->
                                         <!-- End Level two -->
-                                    </ul>
-                                </li>
+                                    <!-- </ul>
+                                </li> -->
                                 <li><a href="pasien/login.php"><button type="button" class="btn btn-block btn-primary">Log In</button></a></li>
                                 <li><a href="pasien/register.php"><button type="button" class="btn btn-block btn-outline-primary">Sign Up</button></a></li>
                             </ul>
@@ -133,8 +179,20 @@
             </div>
         </header>
         <main>
-            <div class="card">
-                <div class="card-group justify-content-evenly">
+            <section>
+                <div class="kiris">
+                    <div class="text">
+                        <h1>Walid ID</h1>
+                        <p class="fb">Solusi Kesehatan</p>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequuntur adipisci nemo quisquam vero quae commodi velit porro corrupti explicabo.</span>
+                    </div>
+                </div>
+                <div class="kanans">
+                    <img src="assets/img/Dokter-removebg.png" alt="">
+                </div>
+            </section>
+            <div class="cardb">
+                <div class="card-group justify-content-between">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Jadwal Buka</p>
@@ -146,7 +204,7 @@
                             <p class="card-text"><small class="text-body-secondary">Tutup ketika libur</small></p>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" id="jjtm">
                         <div class="card-body">
                             <p class="card-text">Janji Temu</p>
                             <i class='bx bx-calendar'></i>
@@ -156,8 +214,8 @@
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Cari Dokter</p>
-                            <box-icon name='wink-tongue'></box-icon>
-                            <p class="card-text"><small class="text-body-secondary">Lihat profil dokter yang kami miliki.</small></p>
+                            <i class='bx bx-male-female'></i>
+                            <p class="card-text"><small class="text-body-secondary">Lihat profil dokter yang kami miliki. Telusuri tentang dokter yang akan memperbaiki kesehatan anda.</small></p>
                         </div>
                     </div>
                 </div>
@@ -236,7 +294,10 @@
         </main>
 
     </div>
-    <footer class="e-footer">
+    <footer class="e-footer container-fluid">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
     </footer>
     </div>
 
