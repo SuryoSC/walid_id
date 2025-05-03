@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+3<!DOCTYPE html>
+=======
 <?php
 require '../koneksi.php';
 
@@ -18,6 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 }
 ?>
+
+
+
+
+
 
 
 
