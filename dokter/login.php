@@ -1,40 +1,3 @@
-<?php
-session_start();
-require '../koneksi.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $conn->real_escape_string($_POST['email']);
-    $password = $_POST['password'];
-
-    $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-
-    $stmt->execute();
-    $stmt->store_result();
-    
-    if ($stmt->num_rows === 1) {
-        $stmt->bind_result($id, $hashed_password);
-        $stmt->fetch();
-
-        if (password_verify($password, $hashed_password)) {
-            $_SESSION['user_id'] = $id;
-            $_SESSION['email'] = $email;
-            header("Location: index.php");
-            exit;
-        } else {
-            echo "Password salah.";
-        }
-    } else {
-        echo "email tidak ditemukan.";
-    }
-
-    $stmt->close();
-}
-?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>User</b>Login</a>
+            <a href="../../index2.html"><b>Dokter</b>Login</a>
         </div>
         <!-- /.login-logo -->
         <div class="card p-3">

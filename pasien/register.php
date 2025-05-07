@@ -7,6 +7,7 @@ require '../koneksi.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $conn->real_escape_string($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $kpassword = password_hash($_POST['konfirmasi_password'], PASSWORD_DEFAULT);
 
     $stmt = $conn->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
     $stmt->bind_param("ss", $email, $password);
@@ -92,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Konfirmasi password" name="cpassword">
+                        <input type="password" class="form-control" placeholder="Konfirmasi password" name="konfirmasi_password" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

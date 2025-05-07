@@ -19,7 +19,7 @@
       margin: auto;
     }
 
-    .title {
+    .judul {
       text-align: center;
       font-size: 26px;
       font-weight: bold;
@@ -61,15 +61,15 @@
       color: #7f8c8d;
     }
 
-    .highlight {
-      background-color: #d1ecf1 !important;
+    .isi {
+      background-color: #d1ecf1 ;
       font-weight: bold;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="title">Daftar Antrian</div>
+    <div class="judul">Daftar Antrian</div>
 
     <table>
       <thead>
@@ -80,7 +80,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="highlight">
+        <tr class="isi">
           <td>1</td>
           <td>Sutyem</td>
           <td>Sedang diperiksa</td>
