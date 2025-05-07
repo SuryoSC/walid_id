@@ -102,6 +102,13 @@
         width: 80%;
     }
 
+    .lyn{
+        border: rgba(0, 191, 255, 0.98) 3px solid;
+        border-radius: 6px;
+        padding: 20px;
+        box-shadow:  #2973B2 2px 2px 20px 5px;
+    }
+
     i{
         font-size: 40px;
     }
@@ -226,7 +233,7 @@
                 <p class="fb text-center">Service Rumah Sakit Walid</p>
                 <p class="text-center"></p>
                 <div class="container text-center">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center lyn">
                         <div class="col">
                             <img src="assets/img/karakterdokter-removebg.png" alt="">
                         </div>
