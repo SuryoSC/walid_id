@@ -21,18 +21,26 @@
                 <div class="h-[20px] bg-gray-50 w-3/5 rounded-sm"></div>
             </div>
             <form action="form-login.php" method="POST" class="flex flex-col items-center gap-5 py-5">
-                <div class="flex-col justify-center items-center">
+                <div class="flex-col justify-center">
                     <div class="flex justify-center">
                         <a href="../index.php" class="text-2xl font-semibold text-center text-sky-600">Walid ID</a>
                     </div>
-                    <p class="text-center text-sm text-gray-400">Masuk ke akun anda</p>
+                    <p class="text-center text-sm text-gray-400">Daftar akun anda</p>
                 </div>
                 <div class="bg-white rounded-full shadow-sm w-full p-1 flex justify-between text-center mb-8">
                     <!-- <p>Walid<b>ID</b></p> -->
-                     <a href="" class="bg-sky-400 w-1/2 h-full p-1 rounded-full text-white">Sign in</a>
-                     <a href="form_register.php" class="w-1/2 h-full p-1 rounded-full text-sky-400">Register</a>
+                     <a href="form_login.php" class="w-1/2 h-full p-1 rounded-full text-sky-400">Sign in</a>
+                     <a href="" class=" bg-sky-400 w-1/2 h-full p-1 rounded-full text-white">Register</a>
                 </div>
                 <div class="w-[400px] flex flex-col gap-5">
+                    <div class="flex flex-col">
+                        <label for="" class="text-sky-500 text-sm">Nama</label>
+                        <input class="border-b-1 border-sky-400 outline-none  text-sm py-1 text-gray-500" type="text" class="form-control" placeholder="Walid" name="nama" required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="" class="text-sky-500 text-sm">Tanggal Lahir</label>
+                        <input class="border-b-1 border-sky-400 outline-none  text-sm py-1 text-gray-500" type="text" class="form-control" placeholder="30-10-2000" name="tanggal_lahir" required>
+                    </div>
                     <div class="flex flex-col">
                         <label for="" class="text-sky-500 text-sm">Email</label>
                         <input class="border-b-1 border-sky-400 outline-none  text-sm py-1 text-gray-500" type="email" class="form-control" placeholder="example@gmail.com" name="email" required>
@@ -41,7 +49,7 @@
                         <label for="" class="text-sky-500 text-sm">Password</label>
                         <input class="border-b-1 border-sky-400 outline-none  text-sm py-1 text-gray-500" type="password" class="form-control" placeholder="lorem*123" name="password" required>
                     </div>
-                    <button type="submit" name="login" class="bg-linear-100 from-sky-400 to-sky-700 text-white p-2 rounded-full my-4">Sign in</button>
+                    <button type="submit" name="register" class="bg-linear-100 from-sky-400 to-sky-700 text-white p-2 rounded-full my-4">Register</button>
                 </div>
             </form>
         </div>
