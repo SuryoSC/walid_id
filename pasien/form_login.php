@@ -23,14 +23,15 @@
             <form action="form-login.php" method="POST" class="flex flex-col items-center gap-5 py-5">
                 <div class="flex-col justify-center items-center">
                     <div class="flex justify-center">
-                        <a href="../index.php" class="text-2xl font-semibold text-center text-sky-600">Walid ID</a>
+                        <!-- <a href="../index.php" class="text-2xl font-semibold text-center text-sky-600">Walid ID</a> -->
+                        <a href="../index.php"><img src="../assets/logo/walid_logo.jpg" alt="" class="h-[100px]"></a>
                     </div>
                     <p class="text-center text-sm text-gray-400">Masuk ke akun anda</p>
                 </div>
                 <div class="bg-white rounded-full shadow-sm w-full p-1 flex justify-between text-center mb-8">
                     <!-- <p>Walid<b>ID</b></p> -->
                      <a href="" class="bg-sky-400 w-1/2 h-full p-1 rounded-full text-white">Sign in</a>
-                     <a href="form_register.php" class="w-1/2 h-full p-1 rounded-full text-sky-400">Register</a>
+                     <a href="form_register.php" class="w-1/2 h-full p-1 rounded-full text-sky-400 hover:text-sky-500">Register</a>
                 </div>
                 <div class="w-[400px] flex flex-col gap-5">
                     <div class="flex flex-col">
