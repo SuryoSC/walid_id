@@ -22,7 +22,7 @@
             $data = $result->fetch_assoc();
             // echo $data["email"];
             // echo $data["password"];
-
+            $_SESSION["id"] = $data["id"];
             $_SESSION["email"] = $data["email"];
             $_SESSION["password"] = $data["password"];
             $_SESSION["nama"] = $data["nama"];

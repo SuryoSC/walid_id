@@ -6,6 +6,11 @@
         session_destroy();
         header('location: ../index.php');
     }
+
+    if(!isset($_SESSION['id'])) {
+        header('location: form_login.php');
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -26,5 +31,6 @@
     <form action="dashboard_pasien.php" method="POST">
         <button type="submit" name="logout">Logout</button>
     </form>
+    <a href="profile.php"><b>Pengaturan Akun</b></a>
 </body>
 </html>
