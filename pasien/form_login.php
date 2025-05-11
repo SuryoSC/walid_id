@@ -42,7 +42,7 @@
                         <label for="" class="text-sky-500 text-sm">Password</label>
                         <input class="border-b-1 border-sky-400 outline-none  text-sm py-1 text-gray-500" type="password" class="form-control" placeholder="lorem*123" name="password" required>
                     </div>
-                    <button type="submit" name="login" class="bg-linear-100 from-sky-400 to-sky-700 text-white p-2 rounded-full my-4">Sign in</button>
+                    <button type="submit" name="login" class="bg-linear-100 from-sky-400 to-sky-700 text-white p-2 rounded-full my-4 cursor-pointer">Sign in</button>
                 </div>
             </form>
         </div>
