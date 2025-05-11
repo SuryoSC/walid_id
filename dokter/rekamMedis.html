@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekam Medis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .container {
+            width: 450px;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .form-row {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        .form-row label {
+            width: 150px;
+            font-weight: bold;
+        }
+        .form-row p{
+            width :300px;
+            height: 30px;
+            border: 1px solid #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 5px;
+        }
+        .form-row input, .form-row textarea {
+            flex: 1;
+            padding: 6px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Rekam Medis</h2>
+        <div class="form-row">
+            <h5>Data Diri</h5>
+        </div>
+        <div class="form-row">
+            <label for="nama">Nama:</label>
+            <p>ezar</p>
+        </div>
+        <div class="form-row">
+            <label for="tanggal">Tanggal:</label>
+            <p>biyen</p>
+        </div>
+        <div class="form-row">
+           <h5>informasi Rumah Sakit</h5>
+        </div>
+        <div class="form-row">
+            <label for="dokter">Dokter:</label>
+            <p>bogeng</p>
+        </div>
+        <div class="form-row">
+            <label for="keluhan">Keluhan:</label>
+            <p>sakit perut</p>
+        </div>
+        <div class="form-row">
+            <label for="diagnosa">Diagnosa:</label>
+            <input type="text"  name="diagnosa" value="">
+        </div>
+    </div>
+</body>
+</html>
