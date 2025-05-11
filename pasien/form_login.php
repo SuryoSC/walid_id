@@ -1,11 +1,40 @@
 <?php
+    include("../service/koneksi.php");
+    session_start();
+
+    $login_message = "";
+
+    if(isset($_SESSION["is_login"])) {
+        header("location: dashboard_pasien.php");
+
+    }
 
     if(isset($_POST['login'])) {
-        // echo 'Klik berhasil';
         $email = $_POST['email'];
-        // echo $email;
         $password = $_POST['password'];
-        // echo $password;
+
+        $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'
+        ";
+        $result = $db->query($sql);
+        
+        if($result->num_rows > 0) {
+            // echo "datanya ada";
+            $data = $result->fetch_assoc();
+            // echo $data["email"];
+            // echo $data["password"];
+
+            $_SESSION["email"] = $data["email"];
+            $_SESSION["password"] = $data["password"];
+            $_SESSION["nama"] = $data["nama"];
+            $_SESSION["tanggal_lahir"] = $data["tanggal_lahir"];
+            $_SESSION["is_login"] = true ;
+
+            header("location: dashboard_pasien.php");
+
+        }else {
+            // echo "datanya tidak ada";
+            $login_message = "Akun tidak ditemukan ❌";
+        }
     }
 
 ?>
@@ -39,6 +68,7 @@
                         <a href="../index.php"><img src="../assets/logo/walid_logo.jpg" alt="" class="h-[100px]"></a>
                     </div>
                     <p class="text-center text-sm text-gray-400">Masuk ke akun anda</p>
+                    <p class="text-center text-sm text-gray-400"><?= $login_message ?></p>
                 </div>
                 <div class="bg-white rounded-full shadow-sm w-full p-1 flex justify-between text-center mb-8">
                     <!-- <p>Walid<b>ID</b></p> -->

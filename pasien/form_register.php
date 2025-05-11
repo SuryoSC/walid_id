@@ -1,3 +1,33 @@
+<?php
+    include("../service/koneksi.php");
+    session_start();
+
+    $register_message = "";
+
+    if(isset($_SESSION["is_login"])) {
+        header("location: dashboard_pasien.php");
+
+    }
+
+    if(isset($_POST["register"])){
+        $nama = $_POST["nama"];
+        $tanggal_lahir = $_POST["tanggal_lahir"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        $sql = "INSERT INTO users (email, password, nama, tanggal_lahir) VALUES ('$email', '$password', '$nama', '$tanggal_lahir')";
+
+        if($db->query($sql)){
+            // echo "Bisa";
+            $register_message = "Pendaftaran Berhasil ✅";
+        }else {
+            // echo "gagal";
+            $register_message = "Pendaftaran Gagal, silahkan coba lagi ❌";
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +57,7 @@
                         <a href="../index.php"><img src="../assets/logo/walid_logo.jpg" alt="" class="h-[100px]"></a>
                     </div>
                     <p class="text-center text-sm text-gray-400">Daftar akun anda</p>
+                    <p class="text-center text-sm text-gray-400"> <?= $register_message ?> </p>
                 </div>
                 <div class="bg-white rounded-full shadow-sm w-full p-1 flex justify-between text-center mb-8">
                     <!-- <p>Walid<b>ID</b></p> -->
