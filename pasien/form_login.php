@@ -1,3 +1,15 @@
+<?php
+
+    if(isset($_POST['login'])) {
+        // echo 'Klik berhasil';
+        $email = $_POST['email'];
+        // echo $email;
+        $password = $_POST['password'];
+        // echo $password;
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +32,7 @@
             <div class="bg-gray-200 w-full pt-1 pb-2 flex justify-center">
                 <div class="h-[20px] bg-gray-50 w-3/5 rounded-sm"></div>
             </div>
-            <form action="form-login.php" method="POST" class="flex flex-col items-center gap-5 py-5">
+            <form action="form_login.php" method="POST" class="flex flex-col items-center gap-5 py-5">
                 <div class="flex-col justify-center items-center">
                     <div class="flex justify-center">
                         <!-- <a href="../index.php" class="text-2xl font-semibold text-center text-sky-600">Walid ID</a> -->
