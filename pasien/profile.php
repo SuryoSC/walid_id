@@ -2,6 +2,8 @@
     include("../service/koneksi.php");
     session_start();
 
+    $ganti_data_message = "";
+
     if(!isset($_SESSION['id'])) {
         header('location: form_login.php');
         exit();
