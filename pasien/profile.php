@@ -26,11 +26,47 @@
         ";
 
         if(mysqli_query($db, $sql)) {
-            echo "Berhasil";
+            // echo "Berhasil";
+            $ganti_data_message = "Data berhasil diubah ✅";
+
+            // Mengupdate data pada tampilan
+            $sql = "SELECT * FROM users WHERE id=$id
+            ";
+            $result = $db->query($sql);
+            $data = $result->fetch_assoc();
+            // echo $data["email"];
+            // echo $data["password"];
+            // echo $data["password"];
+            // $_SESSION["id"] = $data["id"];
+            $_SESSION["email"] = $data["email"];
+            $_SESSION["password"] = $data["password"];
+            $_SESSION["nama"] = $data["nama"];
+            $_SESSION["tanggal_lahir"] = $data["tanggal_lahir"];
+
         }else {
-            echo "Gagal";
+            // echo "Gagal";
+            $ganti_data_message = "Data gagal diubah, silahkan coba lagi ❌";
         }
     }
+
+    if(isset($_POST["batal"])) {
+        header("location: dashboard_pasien.php");
+
+    }
+
+    // function getOneSiswa() {
+    //     require_once("../service/koneksi.php");
+        
+    //     $sql = "SELECT * FROM siswa WHERE id=:id";
+    //     $stmt = $db->prepare($sql);
+
+    //     $stmt->bindParam(':id', $id);
+
+    //     // Eksekusi query
+    //     $stmt->execute();
+    //     $result = $stmt->fetch_assoc();
+    //     return $result;
+    // }
 
 ?>
 
@@ -81,9 +117,12 @@
                     <input name="password" class="outline-none border-b-1 border-sky-400 text-sm text-gray-500 py-1" value="<?= $_SESSION["password"] ?>" type="text" required>
                 </div>
 
-                <div class="flex justify-between w-4/5 mt-8">
-                    <button name="batal" class="bg-sky-400 w-10/21 text-white p-2 rounded-full cursor-pointer">Batal</button>
-                    <button name="simpan" class="bg-sky-700 w-10/21 text-white p-2 rounded-full cursor-pointer">Simpan</button>
+                <div class="flex flex-col justify-between items-center w-full h-[70px]">
+                    <p class="text-center text-sm text-gray-400"> <?= $ganti_data_message ?> </p>
+                    <div class="flex justify-between w-4/5">
+                        <button name="batal" class="bg-sky-400 w-10/21 text-white p-2 rounded-full cursor-pointer">Kembali</button>
+                        <button name="simpan" class="bg-sky-700 w-10/21 text-white p-2 rounded-full cursor-pointer">Simpan</button>
+                    </div>
                 </div>
             </form>
         </div>
