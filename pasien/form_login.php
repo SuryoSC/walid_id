@@ -1,3 +1,44 @@
+<?php
+    include("../service/koneksi.php");
+    session_start();
+
+    $login_message = "";
+
+    if(isset($_SESSION["is_login"])) {
+        header("location: dashboard_pasien.php");
+
+    }
+
+    if(isset($_POST['login'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'
+        ";
+        $result = $db->query($sql);
+        
+        if($result->num_rows > 0) {
+            // echo "datanya ada";
+            $data = $result->fetch_assoc();
+            // echo $data["email"];
+            // echo $data["password"];
+            $_SESSION["id"] = $data["id"];
+            $_SESSION["email"] = $data["email"];
+            $_SESSION["password"] = $data["password"];
+            $_SESSION["nama"] = $data["nama"];
+            $_SESSION["tanggal_lahir"] = $data["tanggal_lahir"];
+            $_SESSION["is_login"] = true ;
+
+            header("location: dashboard_pasien.php");
+
+        }else {
+            // echo "datanya tidak ada";
+            $login_message = "Akun tidak ditemukan ❌";
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,11 +68,12 @@
                         <a href="../index.php"><img src="../assets/logo/walid_logo.jpg" alt="" class="h-[100px]"></a>
                     </div>
                     <p class="text-center text-sm text-gray-400">Masuk ke akun anda</p>
-                    <p class="text-center text-sm text-gray-400"></p>
+                    <p class="text-center text-sm text-gray-400"><?= $login_message ?></p>
                 </div>
-                <div class="w-[400px] bg-white rounded-full shadow-sm p-1 flex justify-between text-center mb-8">
+                <div class="bg-white rounded-full shadow-sm w-full p-1 flex justify-between text-center mb-8">
                     <!-- <p>Walid<b>ID</b></p> -->
-                    <p class="bg-sky-400 w-full h-full p-1 rounded-full text-white">Login Dokter</p>                        
+                     <a href="" class="bg-sky-400 w-1/2 h-full p-1 rounded-full text-white">Sign in</a>
+                     <a href="form_register.php" class="w-1/2 h-full p-1 rounded-full text-sky-400 hover:text-sky-500">Register</a>
                 </div>
                 <div class="w-[400px] flex flex-col gap-5">
                     <div class="flex flex-col">
@@ -42,7 +84,7 @@
                         <label for="" class="text-sky-500 text-sm">Password</label>
                         <input class="border-b-1 border-sky-400 outline-none  text-sm py-1 text-gray-500" type="password" class="form-control" placeholder="lorem*123" name="password" required>
                     </div>
-                    <button type="submit" name="login" class="bg-linear-100 from-sky-400 to-sky-700 text-white p-2 rounded-full my-4 cursor-pointer">Log in</button>
+                    <button type="submit" name="login" class="bg-linear-100 from-sky-400 to-sky-700 text-white p-2 rounded-full my-4 cursor-pointer">Sign in</button>
                 </div>
             </form>
         </div>
