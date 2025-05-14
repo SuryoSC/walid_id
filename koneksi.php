@@ -10,3 +10,19 @@
 //     die("Koneksi gagal: " . $conn->connect_error);
 // }
 ?>
+<?php
+
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$database_name = "walidid";
+
+$db = mysqli_connect($hostname, $username, $password, $database_name);
+
+if($db->connect_error) {
+    echo "koneksi database rusak";
+    die("error!");
+}
+
+// echo "berhasil terhubung dengan database";
+?>
