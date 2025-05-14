@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="assets/theme/plugins/fontawesome-free/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -17,101 +19,108 @@
     <link rel="stylesheet" href="assets/theme/dist/css/adminlte.min.css">
 </head>
 <style>
-    *{
-        font-family: "Josefin Sans", sans-serif;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-size: 16px;
-        color: #00BFFF;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    .e-header {
-        flex-direction: row;
-    }
+body {
+    background: rgb(240, 240, 240);
+}
 
-    .fb {
-        font-size: 39px;
-        font-weight: 500;
-        text-align: left;
-    }
+* {
+    font-family: "Josefin Sans", sans-serif;
+}
 
-    #janji{
-        text-align: center !important;
-    }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    color: #00BFFF;
+}
 
-    span {
-        color: #000;
-        opacity: 30%;
-    }
+.e-header {
+    flex-direction: row;
+}
 
-    main {
-        display: flex;
-        flex-direction: column;
-        gap: 200px;
-    }
+.fb {
+    font-size: 39px;
+    font-weight: 500;
+    text-align: left;
+}
 
-    .card {
-        background-color: #2973B2;
-        color: white;
-    }
+#janji {
+    text-align: center !important;
+}
 
-    #jjtm{
-        background-color: white;
-        color: #2973B2;
-    }
+span {
+    color: #000;
+    opacity: 30%;
+}
 
-    button{
-        background-color: #00BFFF;
-    }
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+}
 
-    /* box-icon{
+.card {
+    background-color: #2973B2;
+    color: white;
+}
+
+#jjtm {
+    background-color: white;
+    color: #2973B2;
+}
+
+button {
+    background-color: #00BFFF;
+}
+
+/* box-icon{
         font-size: 70px;
     } */
 
-    section{
-        display: flex;
-    }
+section {
+    display: flex;
+}
 
-    .kiris{
-        display: flex;
-        align-items: center;
-    }
+.kiris {
+    display: flex;
+    align-items: center;
+}
 
-    .text{
-        width: 50%;
-    }
+.text {
+    width: 50%;
+}
 
-    .kanans{
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        /* overflow: hidden; */
-        background-color: #2973B2;
-        border-radius: 50%;
-    }
+.kanans {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    /* overflow: hidden; */
+    background-color: #2973B2;
+    border-radius: 50%;
+}
 
-    .kanans img
+.kanans img .cardb {
+    background-color: rgba(0, 191, 255, 0.98);
+    width: 80%;
+}
 
-    .cardb{
-        background-color:rgba(0, 191, 255, 0.98);
-        width: 80%;
-    }
+.lyn {
+    border: rgba(0, 191, 255, 0.98) 3px solid;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: #2973B2 2px 2px 20px 5px;
+}
 
-    .lyn{
-        border: rgba(0, 191, 255, 0.98) 3px solid;
-        border-radius: 6px;
-        padding: 20px;
-        box-shadow:  #2973B2 2px 2px 20px 5px;
-    }
-
-    i{
-        font-size: 40px;
-    }
+i {
+    font-size: 40px;
+}
 </style>
 
 <body>
@@ -122,7 +131,8 @@
                 <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center">
                     <div class="container justify-content-between" style="width: 100%;">
                         <a href="../../index3.html" class="navbar-brand">
-                            <img src="assets/img/walid1.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8" width="80px">
+                            <img src="assets/img/walid1.jpg" alt="AdminLTE Logo"
+                                class="brand-image img-circle elevation-3" style="opacity: .8" width="80px">
                             <span class="brand-text font-weight-light">Walid ID</span>
                         </a>
 
@@ -144,33 +154,35 @@
 
                                         <li class="dropdown-divider"></li> -->
 
-                                        <!-- Level two dropdown-->
-                                        <!-- <li class="dropdown-submenu dropdown-hover">
+                                <!-- Level two dropdown-->
+                                <!-- <li class="dropdown-submenu dropdown-hover">
                                             <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Hover for action</a>
                                             <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
                                                 <li>
                                                     <a tabindex="-1" href="#" class="dropdown-item">level 2</a>
                                                 </li> -->
 
-                                                <!-- Level three dropdown-->
-                                                <!-- <li class="dropdown-submenu">
+                                <!-- Level three dropdown-->
+                                <!-- <li class="dropdown-submenu">
                                                     <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">level 2</a>
                                                     <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow">
                                                         <li><a href="#" class="dropdown-item">3rd level</a></li>
                                                         <li><a href="#" class="dropdown-item">3rd level</a></li>
                                                     </ul>
                                                 </li> -->
-                                                <!-- End Level three -->
+                                <!-- End Level three -->
 
-                                                <!-- <li><a href="#" class="dropdown-item">level 2</a></li>
+                                <!-- <li><a href="#" class="dropdown-item">level 2</a></li>
                                                 <li><a href="#" class="dropdown-item">level 2</a></li>
                                             </ul>
                                         </li> -->
-                                        <!-- End Level two -->
-                                    <!-- </ul>
+                                <!-- End Level two -->
+                                <!-- </ul>
                                 </li> -->
-                                <li><a href="pasien/login.php"><button type="button" class="btn btn-block btn-primary">Log In</button></a></li>
-                                <li><a href="pasien/register.php"><button type="button" class="btn btn-block btn-outline-primary">Sign Up</button></a></li>
+                                <li><a href="pasien/login.php"><button type="button"
+                                            class="btn btn-block btn-primary">Log In</button></a></li>
+                                <li><a href="pasien/register.php"><button type="button"
+                                            class="btn btn-block btn-outline-primary">Sign Up</button></a></li>
                             </ul>
                         </div>
 
@@ -191,7 +203,8 @@
                     <div class="text">
                         <h1>Walid ID</h1>
                         <p class="fb">Solusi Kesehatan</p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequuntur adipisci nemo quisquam vero quae commodi velit porro corrupti explicabo.</span>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequuntur adipisci
+                            nemo quisquam vero quae commodi velit porro corrupti explicabo.</span>
                     </div>
                 </div>
                 <div class="kanans">
@@ -204,10 +217,14 @@
                         <div class="card-body">
                             <p class="card-text">Jadwal Buka</p>
                             <i class='bx bx-time-five'></i>
-                            <p class="card-text"><small class="text-body-secondary">Senin - Kamis Pagi: Jam 08.00 - 12.00</small></p>
-                            <p class="card-text"><small class="text-body-secondary">Senin - Kamis Sore: Jam 12.30 - 17.00</small></p>
-                            <p class="card-text"><small class="text-body-secondary">Jumat - Minggu Pagi: Jam 08.00 - 12.00</small></p>
-                            <p class="card-text"><small class="text-body-secondary">Jumat - Minggu Sore: Jam 12.30 - 17.00</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Senin - Kamis Pagi: Jam 08.00 -
+                                    12.00</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Senin - Kamis Sore: Jam 12.30 -
+                                    17.00</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Jumat - Minggu Pagi: Jam 08.00 -
+                                    12.00</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Jumat - Minggu Sore: Jam 12.30 -
+                                    17.00</small></p>
                             <p class="card-text"><small class="text-body-secondary">Tutup ketika libur</small></p>
                         </div>
                     </div>
@@ -215,14 +232,16 @@
                         <div class="card-body">
                             <p class="card-text">Janji Temu</p>
                             <i class='bx bx-calendar'></i>
-                            <p class="card-text"><small class="text-body-secondary">Atur janji anda dengan mendaftar dan dapatkan tiket untuk berobat.</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Atur janji anda dengan mendaftar dan
+                                    dapatkan tiket untuk berobat.</small></p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Cari Dokter</p>
                             <i class='bx bx-male-female'></i>
-                            <p class="card-text"><small class="text-body-secondary">Lihat profil dokter yang kami miliki. Telusuri tentang dokter yang akan memperbaiki kesehatan anda.</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Lihat profil dokter yang kami
+                                    miliki. Telusuri tentang dokter yang akan memperbaiki kesehatan anda.</small></p>
                         </div>
                     </div>
                 </div>
@@ -252,7 +271,9 @@
                     <div class="col">
                         <h2>Jadwal Waktu</h2>
                         <p class="fb" id="janji">Janji Temu</p>
-                        <span>Segera daftarkan diri Anda untuk memperoleh antrean sesuai dengan hari dan jam yang Anda inginkan, sehingga Anda dapat mengatur waktu dengan lebih fleksibel dan memastikan bahwa Anda mendapatkan slot yang paling sesuai dengan jadwal Anda.</span>
+                        <span>Segera daftarkan diri Anda untuk memperoleh antrean sesuai dengan hari dan jam yang Anda
+                            inginkan, sehingga Anda dapat mengatur waktu dengan lebih fleksibel dan memastikan bahwa
+                            Anda mendapatkan slot yang paling sesuai dengan jadwal Anda.</span>
                     </div>
                     <div class="col">
                         <img src="assets/img/kalender.png" alt="">
@@ -267,7 +288,7 @@
                     <div class="row align-items-start">
                         <div class="col">
                             <div class="card" style="width: 18rem;">
-                                <img src="assets/img/aldyaz-removebg-preview.png" class="card-img-top" alt="...">
+                                <img src="assets/img/dr_budi.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <p class="card-text">dr. Aldyaz Budi Pratama</p>
                                     <p class="card-text">Keahlian : Umum</p>
@@ -277,9 +298,9 @@
                         </div>
                         <div class="col">
                             <div class="card" style="width: 18rem;">
-                                <img src="assets/img/fakhri-removebg-preview.png" class="card-img-top" alt="...">
+                                <img src="assets/img/dr_fakhri.png" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <p class="card-text">dr. Muhammad Fakhri Hidayat</p>
+                                    <p class="card-text">dr. Muhammad Fakhri BP</p>
                                     <p class="card-text">Keahlian : Umum</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
@@ -287,7 +308,7 @@
                         </div>
                         <div class="col">
                             <div class="card" style="width: 18rem;">
-                                <img src="assets/img/syarif-removebg-preview.png" class="card-img-top" alt="...">
+                                <img src="assets/img/dr_syarif.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <p class="card-text">dr. Muhammad Syarif Hidayat</p>
                                     <p class="card-text">Keahlian : Umum</p>
