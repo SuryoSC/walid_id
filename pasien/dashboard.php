@@ -22,6 +22,11 @@
       font-size: 17px;
     }
 
+    .navbaw a:hover {
+      color:  #00BFFF;
+
+    }
+
     p {
       text-decoration: none;
       color: white;
@@ -40,6 +45,10 @@
       text-decoration: none;
     }
 
+    .mfeat a:hover {
+      color: #ADFF2F;
+    }
+
     .runningtext span {
       color: white;
       font-size: 15px;
@@ -48,6 +57,21 @@
     .sliderdoc span {
       color: white;
       font-size: 25px;
+    }
+
+    .artikel span {
+      color: black;
+      font-size: 25px; 
+    }
+
+    .artkes span {
+      color:  black;
+      font-size: 20px;
+    }
+
+    .artkes p {
+      color:  #ADFF2F;
+      font-size: 15px;
     }
 
     .kemitraan span {
@@ -166,7 +190,7 @@
       width: 100%;
       height: 30px;
       background-color: #00BFFF;
-      margin-top: 10px;
+      margin-top: 5px;
       margin-bottom: 10px;
       display: flex;
       text-align: center;
@@ -174,54 +198,79 @@
       justify-content: center;
     }
 
-    .sliderdoc {
+    .galery {
+      display: flex;
+      width:100%;
+      gap: 10px;
+    }
+
+    .galkir {
+      display: flex;
+    }
+
+    .galkir img {
+      width: 300px;
+      height: 610px;
+    }
+
+    .galteng {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .galteng img {
+      width: 500px;
+      height: 300px;
+      margin-bottom: 10px;
+    }
+
+    .galkan {
+      display: flex;
+    }
+
+    .galkan img {
+      width: 300px;
+      height: 610px;
+    }
+
+    .artikel {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }    
+
+    .arttas {
+      margin-top: 10px;
+      margin-bottom: 50px;
+    }
+    .artbaw {
       display: flex;
       flex-direction: row;
-    }
-    .sliderdoc img {
-      width: 100%;
-      height: 300px;
+      justify-content: center;
+      gap: 50px;
     }
 
-    .doc1 {
-      width: 250px;
-      height: 300px;
-      border-radius: 5%;
-      border: 1px solid grey;
+    .artkes {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
     }
 
-    .doc2 {
-      width: 250px;
-      height: 300px;
-      border-radius: 5%;
-      border: 1px solid grey;
+    .artkes img {
+      width:300px;
+      height: 350px;
+      margin-bottom: 10px;
     }
 
-    .doc3 {
-      width: 250px;
-      height: 300px;
-      border-radius: 5%;
-      border: 1px solid grey;
-    }
 
-    .doc4 {
-      width: 250px;
-      height: 300px;
-      border-radius: 5%;
-      border: 1px solid grey;
-    }
-
-    .doc5 {
-      width: 250px;
-      height: 300px;
-      border-radius: 5%;
-      border: 1px solid grey;
-    }
 
     .kemitraan {
       display: flex;
       flex-direction: column;
-      margin-top: 10px;
+      margin-top: 50px;
     }
 
     .kemitraan img {
@@ -276,7 +325,7 @@
             </div>
           <div class="navbaw">
             <a href="#s1"><b>BERANDA</b></a>
-            <a href="#s1"><b>TENTANG</b></a>
+            <a href="about.php"><b>TENTANG</b></a>
             <a href="#s1"><b>LAYANAN</b></a>
             <a href="#s1"><b>SARAN & PENGADUAN</b></a>
           </div>
@@ -317,42 +366,63 @@
         <span><b>SELAMAT DATANG DI WALID.ID | PENDAFTARAN ONLINE DAPAT DILAKUKAN SEHARI SEBELUMNYA MULAI PUKUL 13.00 WIB <!-- | SEMOGA HARIMU MENYENANGKAN  --></b></span>
       </div>
 
-      <div class="sliderdoc">
-        <div class="doc1">
-          <img src="../assets/img/dr-Suryo_Saputro.png" alt="">
-          <span><b>dr. Suryo</b></span>
-          <p></p>
+      <div class="galery">
+        <div class="galkir">
+          <img src="../assets/img/ranjang.jpeg" alt="">
         </div>
-        <div class="doc2">
-          <img src="../assets/img/dr-Aldyaz_Budi_P.png" alt="">
-          <span><b>dr. Aldyaz</b></span>
-          <p></p>
+        <div class="galteng">
+          <img src="../assets/img/loby.jpeg" alt="">
+          <img src="../assets/img/dokter.jpeg" alt="">
         </div>
-        <div class="doc3">
-          <img src="../assets/img/dr-Ezar_Fausta_GP.png" alt="">
-          <span><b>dr. Ezar</b></span>
-          <p></p>
-        </div>
-        <div class="doc4">
-          <img src="../assets/img/dr-Muhammad_Syarif__Hidayat.png" alt="">
-          <span><b>dr. Syarif</b></span>
-          <p></p>
-        </div>
-        <div class="doc5">
-          <img src="../assets/img/dr-Muhammad_Fakhri_Bintang_Pratama.png" alt="">
-          <span><b>dr. Fakhri</b></span>
-          <p></p>
+        <div class="galkan">
+          <img src="../assets/img/canggih.jpeg" alt="">
         </div>
       </div>
 
+      <div class="artikel">
+        <div class="arttas">
+          <span><b>ARTIKEL KESEHATAN</b></span>
+        </div>
+        <div class="artbaw">
+          <div class="artkes">
+            <div clas="artkesup">
+              <a href="https://hellosehat.com/nutrisi/tips-makan-sehat/cara-memasak-sehat-tanpa-goreng/"><img src="../assets/img/Makanan Sehat.jpeg" alt=""></a>
+            </div>
+            <div class="artkesdown">
+              <span><b>7 Alternatif Cara Memasak Makanan yang Tidak Digoreng</b></span>
+              <a href="https://hellosehat.com/nutrisi/tips-makan-sehat/cara-memasak-sehat-tanpa-goreng/"><p><b>Selengkapnya > </b></p></a>
+            </div>
+          </div>
+          <div class="artkes">
+            <div clas="artkesup">
+              <a href="https://hellosehat.com/penyakit-kulit/perawatan-kulit/cara-mencerahkan-kulit/"><img src="../assets/img/Leonardo dicaprio.jpeg" alt=""></a>
+            </div>
+            <div class="artkesdown">
+              <span><b>Cara Lengkap Mencerahkan Kulit yang Kusam</b></span>
+              <a href="https://hellosehat.com/penyakit-kulit/perawatan-kulit/cara-mencerahkan-kulit/"><p><b>Selengkapnya > </b></p></a>
+            </div>
+          </div>
+
+          <div class="artkes">
+            <div clas="artkesup">
+              <a href="https://hellosehat.com/kebugaran/tips-olahraga/tanda-olahraga-berhasil/"><img src="../assets/img/Olahraga.jpeg" alt=""></a>
+            </div>
+            <div class="artkesdown">
+              <span><b>8 Tanda Rutinitas Olahraga Berhasil dan Efektif Dilakukan</b></span>
+              <a href="https://hellosehat.com/kebugaran/tips-olahraga/tanda-olahraga-berhasil/"><p><b>Selengkapnya > </b></p></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
       <div class="kemitraan">
         <div class="kemtas">
           <span><b>PARTNERSHIP</b></span>
         </div>
         <div class="kembaw">
-        <a href=""><img src="../assets/img/Ministry of Health of the republic of indonesia.png" alt=""></a>
-        <a href=""><img src="../assets/img/Logo World Health Organization.png" alt=""></a>
+        <a href="https://kemkes.go.id/id/home"><img src="../assets/img/Ministry of Health of the republic of indonesia.png" alt=""></a>
+        <a href="https://www.who.int/"><img src="../assets/img/Logo World Health Organization.png" alt=""></a>
         </div>
       </div>
 
