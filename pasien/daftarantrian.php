@@ -1,6 +1,6 @@
 <?php
     include '../service/koneksi.php';
-    $result = $db->query("SELECT * FROM antrian WHERE id=1, nama=1, no=1");
+    $result = $db->query("SELECT * FROM antrian WHERE id='1' ");
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
     <h2>Antrian Saat Ini:</h2>
     <ul>
         <?php while($row = $result->fetch_assoc()): ?>
-            <li><?= $row['no_antrian'] ?> - <?= $row['nama'] ?></li>
+            <li><?= $row['pasien'] ?> - <?= $row['jadwal'] ?></li>
         <?php endwhile; ?>
     </ul>
 </body>
