@@ -40,7 +40,6 @@
       padding: 15px 25px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s;
     }
 
     .sidebar a:hover {
