@@ -1,57 +1,86 @@
 <?php
-// function tambahPasien($nama, $keluhan) {
-//     require_once("./koneksi.php");
 
-//     // Query dengan parameter atau menggunakan teknik prepared statement
-//     $sql = "INSERT INTO siswa (nama, kelas) VALUES (:nama, :kelas)";
-//     $stmt = $conn->prepare($sql);
+    include "../service/koneksi.php";
+    session_start();
 
-//     // Bind parameter
-//     $stmt->bindParam(':nama', $nama);
-//     $stmt->bindParam(':kelas', $keluhan);
+    $daftar_message = "";
+    $id_pasien = $_SESSION["id"];
 
-//     // Eksekusi query
-//     $stmt->execute();
-
-//     echo "Data berhasil ditambahkan";
-// }
-
-// function getDaftar() {
-//     require_once("./koneksi.php");
-//     $sql = "SELECT * FROM antrian";
-//     $stmt = $conn->prepare($sql);
-
-//     // Eksekusi query
-//     $stmt->execute();
-//     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//     return $result;
-// }
-
-include "../koneksi.php";
-
-$register_message = "";
+    $nama = "qqq";
+    $email = "";
+    
 
 
+    if (isset($_POST["daftar"])) {
+        // $id = $_SESSION['id'];
+        // echo $id;
 
-if (isset($_POST["register"])) {
-    $nama = $_POST['nama'];
-    $keluhan = $_POST['keluhan'];
+        // $nama = $_POST['nama'];
+        // $tanggal_lahir = $_POST["tanggal_lahir"];
+        // $email = $_POST["email"];
+        // $password = $_POST["password"];
+        $pilih_jadwal = $_POST["kloter"];
 
-    try {
-        $sql = "INSERT INTO users (nama, keluhan) VALUE ('$nama', '$keluhan')";
-
-        if($db->query($sql)) {
-            $register_message = "Pendaftaran Akun Berhasil, Silahkan Login";
-        }else {
-            $register_message = "Pendaftaran Gagal, Silahkan Coba Lagi";
+        if($pilih_jadwal == '11pagi') {
+            $jadwal = 1;
         }
-    }catch (mysqli_sql_exception) {
-        $register_message = "Email sudah terdaftar, Silahkan menggunakan email lain";
+
+        if($pilih_jadwal == '11sore') {
+            $jadwal = 2;
+        }
+
+        $sql = "SELECT * FROM users WHERE id=$id_pasien";
+
+        $result = $db->query($sql);
+        $data = $result->fetch_assoc();
+        $nama = $data["nama"];
+        $email = $data["email"];
+        
+
+        $sqll = "INSERT INTO antrian (pasien, jadwal, no) VALUES ($id_pasien, $jadwal, 1)";
+
+        if($db->query($sqll)) {
+            echo "berhasil";
+        }else {
+            echo "gagal";
+        }
+
+        $sql1 = "SELECT * FROM jadwal WHERE id=$jadwal";
+
+
     }
-    $db->close();
-
-    header("location: form.php");
-
-}
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Nomor Antrian</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="h-screen w-full">
+
+    <h4><?= $id_pasien ?></h4>
+    <h4><?= $nama ?></h4>
+    <h4><?= $email ?></h4>
+
+    <div class="m-auto w-[800px] bg-slate-400">
+        <div class="flex justify-center">
+            <p>FORM PENDAFTARAN</p>
+        </div>
+        <form action="antrian.php" method="POST">
+            <label for="">Jadwal</label>
+            <select name="kloter" id="kloter" required>
+                <option value="">Pilih Jadwal</option>
+                <option value="11pagi">11 Pagi</option>
+                <option value="11sore">11 Sore</option>
+            </select>
+            <button type="submit" name="daftar">Ambil Nomor</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>

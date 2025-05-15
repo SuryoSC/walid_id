@@ -179,9 +179,9 @@ i {
                                 <!-- End Level two -->
                                 <!-- </ul>
                                 </li> -->
-                                <li><a href="pasien/login.php"><button type="button"
+                                <li><a href="pasien/form_login.php"><button type="button"
                                             class="btn btn-block btn-primary">Log In</button></a></li>
-                                <li><a href="pasien/register.php"><button type="button"
+                                <li><a href="pasien/form_register.php"><button type="button"
                                             class="btn btn-block btn-outline-primary">Sign Up</button></a></li>
                             </ul>
                         </div>
