@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard Admin | Walid.id</title>
+  <title>Dokumen</title>
   <style>
     * {
       box-sizing: border-box;
@@ -23,6 +23,7 @@
       font-size: 26px;
       font-weight: bold;
     }
+    
 
     .sidebar {
       width: 230px;
@@ -45,7 +46,12 @@
     .sidebar a:hover {
       background-color: #00BFFF;
     }
-
+    .logo{
+      width : 110px;
+      border-radius : 50%;
+      align
+      
+    }
     .content {
       margin-left: 230px;
       padding: 30px;
@@ -105,10 +111,14 @@
   </header>
 
   <div class="sidebar">
+    <div style="display: flex; justify-content: center;">
+      <img class="logo" src="../assets/logo/walid_logo.jpg" alt="">
+    </div>
+    
     <a href="#">Beranda</a>
     <a href="#">Tambah Dokter</a>
     <a href="#">Jadwal Dokter</a>
-    <a href="#">Keluhan & Saran</a>
+    <a href="#">Saran & Keluhan</a>
     <a href="#">Logout</a>
   </div>
 
