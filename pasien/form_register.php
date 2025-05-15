@@ -16,7 +16,7 @@
         $password = $_POST["password"];
 
         $sql = "INSERT INTO users (email, password, nama, tanggal_lahir) VALUES ('$email', '$password', '$nama', '$tanggal_lahir')";
-
+        
         if($db->query($sql)){
             // echo "Bisa";
             $register_message = "Pendaftaran Berhasil ✅";
