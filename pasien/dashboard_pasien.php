@@ -32,5 +32,6 @@
         <button type="submit" name="logout">Logout</button>
     </form>
     <a href="profile.php"><b>Pengaturan Akun</b></a>
+    <a href="daftarantrian.php"><b>Daftar</b></a>
 </body>
 </html>
