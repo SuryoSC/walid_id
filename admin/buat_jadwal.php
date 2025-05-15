@@ -30,10 +30,11 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buat jadwal</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
-    <form action="buat_jadwal.php" method="POST">
+<body class="h-full w-">
+    <form action="buat_jadwal.php" method="POST" class="">
         <div>
             <label for="">Tanggal</label>
             <input type="number" name="tanggal" required>
