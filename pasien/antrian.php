@@ -6,7 +6,7 @@
     $daftar_message = "";
     $id_pasien = $_SESSION["id"];
 
-    $nama = "qqq";
+    $nama = "";
     $email = "";
     
 
@@ -60,15 +60,15 @@
     <title>Daftar Nomor Antrian</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="h-screen w-full">
 
-    <h4><?= $id_pasien ?></h4>
+<body class="h-screen w-full flex items-center bg-linear-190 from-sky-400 to-sky-800">
+
     <h4><?= $nama ?></h4>
     <h4><?= $email ?></h4>
 
-    <div class="m-auto w-[800px] bg-slate-400">
+    <div class="m-auto w-[800px] h-[500px] bg-gray-50">
         <div class="flex justify-center">
-            <p>FORM PENDAFTARAN</p>
+            <p class="text-xl">FORM PENDAFTARAN</p>
         </div>
         <form action="antrian.php" method="POST">
             <label for="">Jadwal</label>
@@ -77,7 +77,7 @@
                 <option value="11pagi">11 Pagi</option>
                 <option value="11sore">11 Sore</option>
             </select>
-            <button type="submit" name="daftar">Ambil Nomor</button>
+            <button type="submit" name="daftar" class="bg-linear-100 from-sky-400 to-sky-700 text-white">Ambil Nomor Antrian</button>
         </form>
     </div>
 
