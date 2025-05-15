@@ -53,7 +53,7 @@
     .logo{
       width : 110px;
       border-radius : 50%;
-      align
+      align-items:center;
       
     }
     .content {
