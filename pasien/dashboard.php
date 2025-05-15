@@ -20,10 +20,13 @@
       text-decoration: none;
       color: black;
       font-size: 17px;
+      padding: 2%;
+      transition: .5s;
     }
 
     .navbaw a:hover {
-      color:  #00BFFF;
+      background-color: #00BFFF;
+      color:  white;
 
     }
 
@@ -99,11 +102,12 @@
     .navbaw {
       background-color: white;
       height: 60px;
-      padding-right: 50px;
+      /* padding-right: 50px; */
       display: flex;
       justify-content: right;
       align-items: center;
-      gap: 50px;
+      /* gap: 50px; */
+      
     }
 
     .bgutama {
@@ -183,7 +187,7 @@
 
     .m1kir img {
       width: 100%;
-      height: 239px;
+      height: 239px; 
       /* margin-left: 10px; */
     }
 
@@ -210,37 +214,42 @@
     .galery {
       display: flex;
       width:100%;
-      gap: 10px;
-      justify-content: center;
+      gap: 1%;
+      justify-content: space-between;
     }
 
     .galkir {
       display: flex;
+      width: 33%; 
     }
-
+    
     .galkir img {
-      width: 300px;
-      height: 610px;
+      /* height: 610px; */
+      width: 100%; 
     }
-
+    
     .galteng {
       display: flex;
       flex-direction: column;
+      width: 33%; 
+      justify-content: space-between;
+      /* gap: 4%; */
     }
-
+    
     .galteng img {
-      width: 500px;
-      height: 300px;
-      margin-bottom: 10px;
+      width: 100%;
+      height: 49%;
+      /* margin-bottom: 10px; */
     }
-
+    
     .galkan {
       display: flex;
+      width: 33%; 
     }
-
+    
     .galkan img {
-      width: 300px;
-      height: 610px;
+      width: 100%; 
+      /* height: 610px; */
     }
 
     .artikel {
