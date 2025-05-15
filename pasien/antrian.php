@@ -29,11 +29,14 @@
 
 include "../koneksi.php";
 
-$register_message = "";
+$daftar_message = "";
 
 
 
-if (isset($_POST["register"])) {
+if (isset($_POST["daftar"])) {
+
+    $sql = "SELECT * FROM";
+
     $nama = $_POST['nama'];
     $keluhan = $_POST['keluhan'];
 
@@ -50,8 +53,27 @@ if (isset($_POST["register"])) {
     }
     $db->close();
 
-    header("location: form.php");
+    // header("location: form.php");
 
 }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Nomor Antrian</title>
+</head>
+<body>
+    <form action="antrian.php">
+        <label for="">Jadwal</label>
+        <select name="kloter" id="">
+            <option value="11pagi">11 Pagi</option>
+            <option value="11sore">11 Sore</option>
+        </select>
+        <button type="submit" name="daftar">Ambil Nomor</button>
+    </form>
+</body>
+</html>

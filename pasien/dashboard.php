@@ -186,6 +186,10 @@
       margin-left: 10px;
     }
 
+    .m1kir{
+
+    }
+
     .runningtext {
       width: 100%;
       height: 30px;
@@ -202,6 +206,7 @@
       display: flex;
       width:100%;
       gap: 10px;
+      justify-content: center;
     }
 
     .galkir {
