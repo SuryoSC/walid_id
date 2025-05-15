@@ -119,13 +119,14 @@
     .menu1 {
       display: flex;
       flex-direction: row;
+      gap: 1%;
     }
 
     .m1kan {
       display: flex;
       flex-direction: column;
       gap: 1px;
-      width: 300px;
+      width:30%;
 
     }
 
@@ -181,13 +182,17 @@
     }
 
     .m1kir img {
-      width: 850px;
+      width: 100%;
       height: 239px;
-      margin-left: 10px;
+      /* margin-left: 10px; */
     }
 
-    .m1kir{
-
+    .m1kir {
+       width: 100%; 
+       height: 100%;
+      /* background-image: url('../assets/img/poster-satu.jpg');   */
+      /* background-size: cover; */
+      /* background-position: center;  */
     }
 
     .runningtext {
