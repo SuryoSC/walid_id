@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -49,7 +53,7 @@
     .logo{
       width : 110px;
       border-radius : 50%;
-      align
+      align-items:center;
       
     }
     .content {
