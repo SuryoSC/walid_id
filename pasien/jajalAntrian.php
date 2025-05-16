@@ -11,37 +11,41 @@
     
     include "../session/session_user.php";
 
-    if (isset($_POST["daftar"])) {
-        $pilih_jadwal = $_POST["kloter"];
+    // if (isset($_POST["daftar"])) {
+    //     $pilih_jadwal = $_POST["kloter"];
 
-        if($pilih_jadwal == '11pagi') {
-            $jadwal = 1;
-        }
+    //     if($pilih_jadwal == '11pagi') {
+    //         $jadwal = 1;
+    //     }
 
-        if($pilih_jadwal == '11sore') {
-            $jadwal = 2;
-        }
+    //     if($pilih_jadwal == '11sore') {
+    //         $jadwal = 2;
+    //     }
 
-        $sql = "SELECT * FROM users WHERE id=$id_pasien";
+    //     $sql = "SELECT * FROM users WHERE id=$id_pasien";
 
-        $result = $db->query($sql);
-        $data = $result->fetch_assoc();
-        $nama = $data["nama"];
-        $email = $data["email"];
+    //     $result = $db->query($sql);
+    //     $data = $result->fetch_assoc();
+    //     $nama = $data["nama"];
+    //     $email = $data["email"];
         
 
-        $sqll = "INSERT INTO antrian (pasien, jadwal, no) VALUES ($id_pasien, $jadwal, 1)";
+    //     $sqll = "INSERT INTO antrian (pasien, jadwal, no) VALUES ($id_pasien, $jadwal, 1)";
 
-        if($db->query($sqll)) {
-            echo "berhasil";
-        }else {
-            echo "gagal";
-        }
+    //     if($db->query($sqll)) {
+    //         echo "berhasil";
+    //     }else {
+    //         echo "gagal";
+    //     }
 
-        $sql1 = "SELECT * FROM jadwal WHERE id=$jadwal";
+    //     $sql1 = "SELECT * FROM jadwal WHERE id=$jadwal";
 
 
-    }
+    // }
+
+    $jadwal = "SELECT * FROM jadwal";
+
+    $resultJadwal = mysqli_query($db, $jadwal);
 
 ?>
 
@@ -81,6 +85,23 @@
             <button type="submit" name="daftar" class="bg-sky-500 text-white py-2 px-5 rounded-full hover:bg-sky-600 cursor-pointer">Ambil Nomor Antrian</button>
         </form>
 
+        <table class="text-center w-[85%] m-auto">
+        <tr>
+            <th class="border-gray-600 border-1 px-2">ID</th>
+            <th class="border-gray-600 border-1 px-2">Tanggal</th>
+            <th class="border-gray-600 border-1 px-2">Kloter</th>
+            <th class="border-gray-600 border-1 px-2">Dokter</th>
+        </tr>
+
+        <?php while ($row = mysqli_fetch_assoc($resultJadwal)) { ?>
+        <tr>
+            <td class="border-gray-600 border-1 px-2"><?= $row['id'] ?></td>
+            <td class="border-gray-600 border-1 px-2"><?= $row['tgl'] ?></td>
+            <td class="border-gray-600 border-1 px-2"><?= $row['kloter'] ?></td>
+            <td class="border-gray-600 border-1 px-2"><?= $row['dokter'] ?></td>
+        </tr>
+        <?php } ?>
+    </table>
 
     </div>
 

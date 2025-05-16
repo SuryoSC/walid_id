@@ -4,10 +4,7 @@
 
     $ganti_data_message = "";
 
-    if(!isset($_SESSION['id'])) {
-        header('location: form_login.php');
-        exit();
-    }
+    include "../session/session_user.php";
 
     if(isset($_POST['logout'])) {
         session_unset();
@@ -27,7 +24,7 @@
 
         if(mysqli_query($db, $sql)) {
             // echo "Berhasil";
-            $ganti_data_message = "Data berhasil diubah ✅";
+            $ganti_data_message = "sukses";
 
             // Mengupdate data pada tampilan
             $sql = "SELECT * FROM users WHERE id=$id
@@ -45,7 +42,7 @@
 
         }else {
             // echo "Gagal";
-            $ganti_data_message = "Data gagal diubah, silahkan coba lagi ❌";
+            $ganti_data_message = "gagal";
         }
     }
 
@@ -53,20 +50,6 @@
         header("location: dashboard_pasien.php");
 
     }
-
-    // function getOneSiswa() {
-    //     require_once("../service/koneksi.php");
-        
-    //     $sql = "SELECT * FROM siswa WHERE id=:id";
-    //     $stmt = $db->prepare($sql);
-
-    //     $stmt->bindParam(':id', $id);
-
-    //     // Eksekusi query
-    //     $stmt->execute();
-    //     $result = $stmt->fetch_assoc();
-    //     return $result;
-    // }
 
 ?>
 
@@ -77,6 +60,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Settings</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -87,6 +71,25 @@
     </style>
 </head>
 <body>
+
+    <?php if($ganti_data_message === "sukses") : ?>
+       <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: 'Data berhasil diganti.'
+            });
+       </script>
+    <?php elseif ($ganti_data_message === "gagal") : ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal!',
+                text: 'Data gagal diganti.'
+            });
+        </script>
+    <?php endif; ?>
+
     <div class="w-screen h-screen bg-linear-190 from-sky-400 to-sky-800 flex flex-col items-center justify-center">
         <div class="w-3/5">
             <p class="text-xl font-semibold text-white">Pengaturan Akun</p>
@@ -117,8 +120,8 @@
                     <input name="password" class="outline-none border-b-1 border-sky-400 text-sm text-gray-500 py-1" value="<?= $_SESSION["password"] ?>" type="text" required>
                 </div>
 
-                <div class="flex flex-col justify-between items-center w-full h-[70px]">
-                    <p class="text-center text-sm text-gray-400"> <?= $ganti_data_message ?> </p>
+                <div class="flex flex-col justify-end items-center w-full h-[70px]">
+                    <!-- <p class="text-center text-sm text-gray-400"> <?= $ganti_data_message ?> </p> -->
                     <div class="flex justify-between w-4/5">
                         <button name="batal" class="bg-sky-400 w-10/21 text-white p-2 rounded-full cursor-pointer">Kembali</button>
                         <button name="simpan" class="bg-sky-700 w-10/21 text-white p-2 rounded-full cursor-pointer">Simpan</button>
