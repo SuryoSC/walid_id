@@ -1,3 +1,13 @@
+<?php
+
+    $alert = "";
+
+    if(isset($_POST["kirim"])) {
+        $alert = "tampil";
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saran & Pengaduan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
             display: flex;
@@ -32,6 +43,27 @@
 </head>
 
 <body>
+    <!-- <script>
+        function showCustomAlert() {
+            Swal.fire({
+                title: "Drag me!",
+                icon: "success",
+                draggable: true
+            });
+    }
+    </script> -->
+
+    <?php if ($alert === "tampil") : ?>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: 'Data telah dikirm.',
+                confirmButtonColor: '#00BFFF'
+            });
+        </script> 
+    <?php endif; ?>
+
     <div class="container shadow p-3 mt-4">
         <nav>
         </nav>
@@ -41,7 +73,7 @@
             <div class="container ab row">
                 <div class="row g-3" ></div>
 
-                <form action="" class="d-grid gap-5 col-12">
+                <form action="" class="d-grid gap-5 col-12" method="POST">
                     <span>Identitas Diri</span>
                     <div class="mb-3 shadow p-3 rounded-2">
                         <label for="exampleFormControlInput1" class="form-label ">Nama Lengkap</label>
@@ -81,7 +113,7 @@
                         <textarea type="number" class="form-control" id="exampleFormControlInput1" placeholder="Uraian Aduan" row="8"></textarea>
                     </div>
                     <div class="submit d-flex justify-content-end">
-                        <button type="submit" class="custom-bg-background text-white border-0 px-4 py-2 rounded-2">Kirim</button>
+                        <button onclick= "ShowAlertCustom()" type="submit" class="custom-bg-background text-white border-0 px-4 py-2 rounded-2" name="kirim">Kirim</button>
                     </div>
                 </form>
             </div>

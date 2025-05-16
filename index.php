@@ -17,6 +17,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/theme/dist/css/adminlte.min.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <style>
 html {
@@ -112,10 +114,11 @@ section {
 }
 
 .lyn {
-    border: rgba(0, 191, 255, 0.98) 3px solid;
+    /* border: rgba(0, 191, 255, 0.98) 3px solid; */
     border-radius: 6px;
     padding: 20px;
-    box-shadow: #2973B2 2px 2px 20px 5px;
+    /* background: #fff; */
+    /* box-shadow: grey 2px 2px 20px 5px; */
 }
 
 i {
@@ -131,7 +134,7 @@ i {
                 <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center">
                     <div class="container justify-content-between" style="width: 100%;">
                         <a href="../../index3.html" class="navbar-brand">
-                            <img src="assets/img/walid1.jpg" alt="AdminLTE Logo"
+                            <img src="assets/logo/walid_logo-removebg.png" alt="AdminLTE Logo"
                                 class="brand-image img-circle elevation-3" style="opacity: .8" width="80px">
                             <span class="brand-text font-weight-light">Walid ID</span>
                         </a>
@@ -247,11 +250,11 @@ i {
                 </div>
             </div>
 
-            <div class="services container">
+            <div class="services container ">
                 <h2 class="fs-5 text-center">SERVICE</h2>
                 <p class="fb text-center">Service Rumah Sakit Walid</p>
                 <p class="text-center"></p>
-                <div class="container text-center">
+                <div class="container text-center shadow-lg p-3 rounded-3">
                     <div class="row align-items-center lyn">
                         <div class="col">
                             <img src="assets/img/karakterdokter-removebg.png" alt="">
