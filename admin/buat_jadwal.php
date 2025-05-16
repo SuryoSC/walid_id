@@ -33,11 +33,11 @@ if (isset($_POST['submit'])) {
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="h-full w-">
-    <form action="buat_jadwal.php" method="POST" class="">
+<body class="h-full w-full bg-gray-50 flex justify-center items-center">
+    <form action="buat_jadwal.php" method="POST" class="bg-gray-100">
         <div>
             <label for="">Tanggal</label>
-            <input type="number" name="tanggal" required>
+            <input type="date" name="tanggal" required>
         </div>
         <div>
             <label for="">Kloter</label>
