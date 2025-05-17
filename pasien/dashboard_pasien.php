@@ -7,10 +7,6 @@
         header('location: ../index.php');
     }
 
-    // if(!isset($_SESSION['id'])) {
-    //     header('location: form_login.php');
-    //     exit();
-    // }
     include '../session/session_user.php';
 ?>
 
