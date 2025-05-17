@@ -72,36 +72,14 @@
                         <td class="px-2 py-3 border-t-1 border-gray-200 pr-8">
                             <?= isset($dokter_map[$item['dokter']]) ? $dokter_map[$item['dokter']] : 'Tidak diketahui'; ?>
                         </td>
-                        <td class="px-2 py-3 border-t-1 border-gray-200"><?= $item['kloter']; ?></td>
+                        <!-- <td class="px-2 py-3 border-t-1 border-gray-200"><?= $item['kloter']; ?></td> -->
+                        <td class="px-2 py-3 border-t-1 border-gray-200"><a href="isi.php?id=<?php echo $item['id']?>">Daftar</a></td>
                     </tr>
                     <?php endforeach; ?>
                 </table>
                 </tbody>
         </form>
-        <!-- <div class="flex justify-center bg-sky-500 py-2">
-            <p class="text-xl font-semibold text-gray-50">FORM PENDAFTARAN</p>
-        </div>
-
-        <table class="w-[85%] m-auto my-8">
-            <tr>
-                <th class="border-gray-600 border-1 px-2 py-3 text-left">ID</th>
-                <th class="border-gray-600 border-1 px-2 py-3 text-left">Tanggal</th>
-                <th class="border-gray-600 border-1 px-2 py-3 text-left">Kloter</th>
-                <th class="border-gray-600 border-1 px-2 py-3 text-left">Dokter</th>
-                <th class="border-gray-600 border-1 px-2 py-3 text-left">Pilih</th>
-            </tr>
-
-            <?php foreach ($tampil_jadwal as $item): ?>
-                <tr>
-                    <td class="border-gray-600 border-1 px-2 py-3"><?= $item['id']; ?></td>
-                    <td class="border-gray-600 border-1 px-2 py-3"><?= $item['tgl']; ?></td>
-                    <td class="border-gray-600 border-1 px-2 py-3"><?= $item['kloter']; ?></td>
-                    <td class="border-gray-600 border-1 px-2 py-3">
-                        <?= isset($dokter_map[$item['dokter']]) ? $dokter_map[$item['dokter']] : 'Tidak diketahui'; ?>
-                    </td>
-                    <td class="border-gray-600 border-1 px-2"><?= $item['kloter']; ?></td>
-                </tr>
-            <?php endforeach; ?> -->
+        
     </table>
 
     </div>
