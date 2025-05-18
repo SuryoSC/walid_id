@@ -76,8 +76,8 @@
                         <td class="px-2 py-3 border-t-1 border-gray-200"><a href="isi.php?id=<?php echo $item['id']?>" class="bg-sky-500 text-white px-3 py-1 rounded-sm hover:bg-sky-600">Daftar</a></td>
                     </tr>
                     <?php endforeach; ?>
-                </table>
                 </tbody>
+            </table>
         </form>
         
     </table>

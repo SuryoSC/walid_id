@@ -36,6 +36,7 @@
     $jadwal_kloter = $data_jadwal["kloter"];
     $jadwal_iddokter = $data_jadwal["dokter"];
 
+
     // echo "<b>". $jadwal_id . "</b><br>";
     // echo "<b>". $jadwal_date . "</b><br>";
     // echo "<b>". $jadwal_kloter . "</b><br>";
@@ -72,7 +73,7 @@
 
         if($db->query($sql_daftar)){
             echo "Bisa";
-            header("location: tampilan_daftar_antrian.php");
+            header("location: tampilan_daftar_antrian.php?id=".$id_jadwal);
         }else {
             echo "gagal";
         }
