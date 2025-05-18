@@ -47,7 +47,7 @@
     }
 
     if(isset($_POST["batal"])) {
-        header("location: dashboard_pasien.php");
+        header("location: index.php");
 
     }
 

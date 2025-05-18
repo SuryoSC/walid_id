@@ -29,7 +29,7 @@
             $_SESSION["tanggal_lahir"] = $data["tanggal_lahir"];
             $_SESSION["is_login"] = true ;
 
-            header("location: dashboard_pasien.php");
+            header("location: index.php");
 
         }else {
             // echo "datanya tidak ada";
