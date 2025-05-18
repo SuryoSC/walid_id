@@ -348,7 +348,7 @@
 
       <div class="anavbar">
           <div class="navtas">
-            <a href="profile.php" style="height: 45px; display: flex; align-items: center;"><i class='bx bxs-user-circle' style="font-size: 30px; color: #fff;"></i></a>
+            <a href="profile.php" style="height: 45px; display: flex; align-items: center; gap: 10px;"><p><?= $_SESSION['nama'] ?></p><i class='bx bxs-user-circle' style="font-size: 30px; color: #fff;"></i></a>
           </div>
           <div class="navbaw">
             <a href="#s1"><b>BERANDA</b></a>
@@ -371,13 +371,13 @@
           </div>
           <div class="mfeat">
             <div class="f1">
-                <a href="#s1"><b>PENDAFTARAN ONLINE</b></a>
+                <a href="daftar_to_antrian.php"><b>PENDAFTARAN ONLINE</b></a>
               </div>
                 <div class="f2">
                 <a href="#s1"><b>LIHAT NOMOR ANTREAN</b></a>
               </div>
                 <div class="f3">
-                <a href="#s1"><b>JADWAL DOKTER</b></a>
+                <a href="jadwalDokter.php"><b>JADWAL DOKTER</b></a>
               </div>
               <div class="f4">
                 <a href="#s1"><b>RIWAYAT PERIKSA PASIEN</b></a>
