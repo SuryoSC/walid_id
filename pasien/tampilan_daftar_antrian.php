@@ -1,23 +1,32 @@
 <?php
     include("../service/koneksi.php");
     session_start();
-
     include ("../session/session_user.php");
 
-    $id_jadwal = $_GET["id"];
+    $id_jadwal = isset($_GET["id"]) ? $_GET["id"] : 0;
 
-    // echo"".$id_jadwal."";
+    // Ambil data antrian dengan JOIN ke tabel users dan jadwal
+    $sql = "SELECT 
+                antrian.id,
+                users.nama AS nama_pasien,
+                jadwal.tgl,
+                jadwal.kloter,
+                antrian.no,
+                antrian.status
+            FROM antrian
+            JOIN users ON antrian.pasien = users.id
+            JOIN jadwal ON antrian.jadwal = jadwal.id
+            WHERE antrian.jadwal = $id_jadwal";
 
-    $sql = "SELECT * FROM antrian WHERE jadwal=$id_jadwal";
     $hasil = $db->query($sql);
     $antrian = [];
     while ($row = mysqli_fetch_assoc($hasil)) {
         $antrian[] = $row;
     }
 
-    $terserah = "SELECT  users.nama, jadwal.tgl FROM users LEFT JOIN jadwal ON users.id = jadwal.id ";
-    $mbuh = $db->query($terserah);
-
+    // Ambil semua jadwal untuk dropdown
+    $select_tanggal = "SELECT id, tgl, kloter FROM jadwal";
+    $result_tanggal = $db->query($select_tanggal);
 ?>
 
 <!DOCTYPE html>
@@ -25,41 +34,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Nomor Antrian</title>
 </head>
 <body>
-    <div class="mx-auto w-[860px] bg-gray-50 rounded-sm mb-16">
-        <form action="tampilan_daftar_antrian.php" method="POST">
-            <select name="" id=""></select>
-            <table class="w-full rounded-lg">
-                <tbody>
-                    <tr class="text-gray-50">
-                        <th class="px-2 py-3 text-left font-medium bg-sky-600 rounded-tl-sm pl-8">ID</th>
-                        <th class="px-2 py-3 text-left font-medium bg-sky-600">Pasien</th>
-                        <th class="px-2 py-3 text-left font-medium bg-sky-600">Jadwal</th>
-                        <th class="px-2 py-3 text-left font-medium bg-sky-600">Nomor Antrian</th>
-                    </tr>
-                    <?php foreach ($antrian as $item): ?>
-                    <tr class="">
-                        <td class="px-2 py-3 border-t-1 border-gray-200 pl-8"><?= $item['id']; ?></td>
-                        <td class="px-2 py-3 border-t-1 border-gray-200"><?= $item['pasien']; ?></td>
-                        <td class="px-2 py-3 border-t-1 border-gray-200"><?= $item['jadwal']; ?></td>
-                        <td class="px-2 py-3 border-t-1 border-gray-200 pr-8"><?= $item['no'] ?></td>
-                    </tr>
-                    <?php endforeach; ?>
-                    <!-- <?php
-                    while ($row = mysqli_fetch_assoc($mbuh)) {
-                        echo "<tr>";
-                        echo "<td>" . $row['users'] . "</td>";
-                        echo "<td>" . $row['nama'] . "</td>";
-                        echo "<td>" . $row['tgl'] . "</td>";
+    <div class="mx-auto w-[860px] bg-gray-50 rounded-sm mb-16 p-6 shadow-md mt-10">
+        <form action="tampilan_daftar_antrian.php" method="GET">
+            <label for="id" class="block text-gray-700 font-medium mb-1">Pilih Jadwal</label>
+            <select name="id" id="id" required class="border border-gray-300 rounded-lg px-4 py-2 mb-3 focus:ring-2 focus:ring-sky-400 focus:outline-none transition duration-200">
+                <option value="">Pilih Jadwal untuk melihat antrian</option>
+                <?php
+                if ($result_tanggal->num_rows > 0) {
+                    while ($row = $result_tanggal->fetch_assoc()) {
+                        $selected = ($row['id'] == $id_jadwal) ? "selected" : "";
+                        echo "<option value='" . $row['id'] . "' $selected> " . $row['tgl'] . " (" . $row['kloter'] . ")</option>";
                     }
-                    ?> -->
-                </tbody>
-            </table>
+                } else {
+                    echo "<option value=''>Tidak ada data</option>";
+                }
+                ?>
+            </select>
+            <button type="submit" name="cari" class="bg-sky-500 text-white rounded-md px-4 py-2 hover:bg-sky-600">Lihat Antrian</button>
         </form>
-        
-    </table>
+
+        <?php if (!empty($antrian)): ?>
+        <table class="w-full rounded-lg mt-6">
+            <thead>
+                <tr class="text-white bg-sky-600">
+                    <!-- <th class="px-4 py-3 text-left">ID</th> -->
+                    <th class="px-4 py-3 text-left">No Antrian</th>
+                    <th class="px-4 py-3 text-left">Pasien</th>
+                    <th class="px-4 py-3 text-left">Tanggal</th>
+                    <th class="px-4 py-3 text-left">Kloter</th>
+                    <th class="px-4 py-3 text-left">Status</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white text-gray-700">
+                <?php foreach ($antrian as $item): ?>
+                <tr class="border-t">
+                    <!-- <td class="px-4 py-3"><?= $item['id']; ?></td> -->
+                    <td class="px-4 py-3"><?= $item['no']; ?></td>
+                    <td class="px-4 py-3"><?= $item['nama_pasien']; ?></td>
+                    <td class="px-4 py-3"><?= $item['tgl']; ?></td>
+                    <td class="px-4 py-3"><?= ucfirst($item['kloter']); ?></td>
+                    <td class="px-4 py-3"><?= ucfirst($item['status']); ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <?php elseif ($id_jadwal): ?>
+            <p class="mt-6 text-gray-500">Belum ada antrian untuk jadwal yang dipilih.</p>
+        <?php endif; ?>
+    </div>
 </body>
 </html>

@@ -374,7 +374,7 @@
                 <a href="daftar_to_antrian.php"><b>PENDAFTARAN ONLINE</b></a>
               </div>
                 <div class="f2">
-                <a href="#s1"><b>LIHAT NOMOR ANTREAN</b></a>
+                <a href="tampilan_daftar_antrian.php"><b>LIHAT NOMOR ANTREAN</b></a>
               </div>
                 <div class="f3">
                 <a href="jadwalDokter.php"><b>JADWAL DOKTER</b></a>
