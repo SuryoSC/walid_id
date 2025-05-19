@@ -58,16 +58,16 @@
             <table class="w-full rounded-lg">
                 <tbody>
                     <tr class="text-gray-50">
-                        <th class="px-2 py-3 text-left font-medium bg-sky-600 rounded-tl-sm pl-8">ID</th>
-                        <th class="px-2 py-3 text-left font-medium bg-sky-600">Tanggal</th>
+                        <!-- <th class="px-2 py-3 text-left font-medium bg-sky-600 rounded-tl-sm pl-8">ID</th> -->
+                        <th class="px-2 py-3 text-left font-medium bg-sky-600 rounded-tl-sm pl-8">Tanggal</th>
                         <th class="px-2 py-3 text-left font-medium bg-sky-600">Kloter</th>
                         <th class="px-2 py-3 text-left font-medium bg-sky-600">Dokter</th>
                         <th class="px-2 py-3 text-left font-medium bg-sky-600 rounded-tr-sm pr-8">Pilih</th>
                     </tr>
                     <?php foreach ($tampil_jadwal as $item): ?>
                     <tr class="">
-                        <td class="px-2 py-3 border-t-1 border-gray-200 pl-8"><?= $item['id']; ?></td>
-                        <td class="px-2 py-3 border-t-1 border-gray-200"><?= $item['tgl']; ?></td>
+                        <!-- <td class="px-2 py-3 border-t-1 border-gray-200 pl-8"><?= $item['id']; ?></td> -->
+                        <td class="px-2 py-3 border-t-1 border-gray-200 pl-8"><?= $item['tgl']; ?></td>
                         <td class="px-2 py-3 border-t-1 border-gray-200"><?= $item['kloter']; ?></td>
                         <td class="px-2 py-3 border-t-1 border-gray-200 pr-8">
                             <?= isset($dokter_map[$item['dokter']]) ? $dokter_map[$item['dokter']] : 'Tidak diketahui'; ?>

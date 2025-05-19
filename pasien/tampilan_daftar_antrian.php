@@ -15,6 +15,9 @@
         $antrian[] = $row;
     }
 
+    $terserah = "SELECT  users.nama, jadwal.tgl FROM users LEFT JOIN jadwal ON users.id = jadwal.id ";
+    $mbuh = $db->query($terserah);
+
 ?>
 
 <!DOCTYPE html>
@@ -27,28 +30,32 @@
 </head>
 <body>
     <div class="mx-auto w-[860px] bg-gray-50 rounded-sm mb-16">
-        <form action="">
+        <form action="tampilan_daftar_antrian.php" method="POST">
+            <select name="" id=""></select>
             <table class="w-full rounded-lg">
                 <tbody>
                     <tr class="text-gray-50">
                         <th class="px-2 py-3 text-left font-medium bg-sky-600 rounded-tl-sm pl-8">ID</th>
-                        <th class="px-2 py-3 text-left font-medium bg-sky-600">Tanggal</th>
-                        <th class="px-2 py-3 text-left font-medium bg-sky-600">Kloter</th>
-                        <th class="px-2 py-3 text-left font-medium bg-sky-600">Dokter</th>
-                        <th class="px-2 py-3 text-left font-medium bg-sky-600 rounded-tr-sm pr-8">Pilih</th>
+                        <th class="px-2 py-3 text-left font-medium bg-sky-600">Pasien</th>
+                        <th class="px-2 py-3 text-left font-medium bg-sky-600">Jadwal</th>
+                        <th class="px-2 py-3 text-left font-medium bg-sky-600">Nomor Antrian</th>
                     </tr>
                     <?php foreach ($antrian as $item): ?>
                     <tr class="">
                         <td class="px-2 py-3 border-t-1 border-gray-200 pl-8"><?= $item['id']; ?></td>
                         <td class="px-2 py-3 border-t-1 border-gray-200"><?= $item['pasien']; ?></td>
                         <td class="px-2 py-3 border-t-1 border-gray-200"><?= $item['jadwal']; ?></td>
-                        <td class="px-2 py-3 border-t-1 border-gray-200 pr-8">
-                            <?= isset($dokter_map[$item['dokter']]) ? $dokter_map[$item['dokter']] : 'Tidak diketahui'; ?>
-                        </td>
-                        <!-- <td class="px-2 py-3 border-t-1 border-gray-200"><?= $item['kloter']; ?></td> -->
-                        <td class="px-2 py-3 border-t-1 border-gray-200"><a href="isi.php?id=<?php echo $item['id']?>" class="bg-sky-500 text-white px-3 py-1 rounded-sm hover:bg-sky-600">Daftar</a></td>
+                        <td class="px-2 py-3 border-t-1 border-gray-200 pr-8"><?= $item['no'] ?></td>
                     </tr>
                     <?php endforeach; ?>
+                    <!-- <?php
+                    while ($row = mysqli_fetch_assoc($mbuh)) {
+                        echo "<tr>";
+                        echo "<td>" . $row['users'] . "</td>";
+                        echo "<td>" . $row['nama'] . "</td>";
+                        echo "<td>" . $row['tgl'] . "</td>";
+                    }
+                    ?> -->
                 </tbody>
             </table>
         </form>

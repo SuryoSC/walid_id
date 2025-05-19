@@ -64,7 +64,7 @@
                 </div>
                 <div class="bg-white rounded-full shadow-sm w-full p-1 flex justify-between text-center mb-8">
                     <!-- <p>Walid<b>ID</b></p> -->
-                     <a href="form_login.php" class="w-1/2 h-full p-1 rounded-full text-sky-400 hover:text-sky-500">Sign in</a>
+                     <a href="form_login.php" class="w-1/2 h-full p-1 rounded-full text-sky-400 hover:text-sky-500">Log in</a>
                      <a href="" class=" bg-sky-400 w-1/2 h-full p-1 rounded-full text-white">Register</a>
                 </div>
                 <div class="w-[400px] flex flex-col gap-4">
