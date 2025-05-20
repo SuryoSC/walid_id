@@ -9,7 +9,7 @@
     if(isset($_POST['logout'])) {
         session_unset();
         session_destroy();
-        header('location: form_login.php');
+        header('location: ../index.php');
     }
     
     if(isset($_POST['simpan'])) {
