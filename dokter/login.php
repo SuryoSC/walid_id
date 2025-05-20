@@ -1,3 +1,46 @@
+<?php
+    include("../service/koneksi.php");
+    session_start();
+
+    $login_message = "";
+
+    if(isset($_SESSION["is_login"])) {
+        header("location: login.php");
+
+    }
+
+    if(isset($_POST['login'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'
+        ";
+        $result = $db->query($sql);
+        
+        if($result->num_rows > 0) {
+            // echo "datanya ada";
+            $data = $result->fetch_assoc();
+            // echo $data["email"];
+            // echo $data["password"];
+            $_SESSION["id"] = $data["id"];
+            $_SESSION["email"] = $data["email"];
+            $_SESSION["password"] = $data["password"];
+            $_SESSION["nama"] = $data["nama"];
+            $_SESSION["tanggal_lahir"] = $data["tanggal_lahir"];
+            $_SESSION["is_login"] = true ;
+
+            header("location: index.php");
+
+        }else {
+            // echo "datanya tidak ada";
+            $login_message = "gagal";
+        }
+    }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +63,7 @@
             <div class="bg-gray-200 w-full pt-1 pb-2 flex justify-center">
                 <div class="h-[20px] bg-gray-50 w-3/5 rounded-sm"></div>
             </div>
-            <form action="form_login.php" method="POST" class="flex flex-col items-center gap-5 py-5">
+            <form action="login.php" method="POST" class="flex flex-col items-center gap-5 py-5">
                 <div class="flex-col justify-center items-center">
                     <div class="flex justify-center">
                         <!-- <a href="../index.php" class="text-2xl font-semibold text-center text-sky-600">Walid ID</a> -->
