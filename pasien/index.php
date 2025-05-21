@@ -351,10 +351,10 @@
             <a href="profile.php" style="height: 45px; display: flex; align-items: center; gap: 10px;"><p><?= $_SESSION['nama'] ?></p><i class='bx bxs-user-circle' style="font-size: 30px; color: #fff;"></i></a>
           </div>
           <div class="navbaw">
-            <a href="#s1"><b>BERANDA</b></a>
+            <a href="#"><b>BERANDA</b></a>
             <a href="about.php"><b>TENTANG</b></a>
             <a href="#s1"><b>LAYANAN</b></a>
-            <a href="#s1"><b>SARAN & PENGADUAN</b></a>
+            <a href="pengaduan.php"><b>SARAN & PENGADUAN</b></a>
           </div>
       </div>
 

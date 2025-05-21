@@ -198,7 +198,7 @@
         <a href="index.php"><b>BERANDA</b></a>
         <a href="#s1"><b>TENTANG</b></a>
         <a href="#s1"><b>LAYANAN</b></a>
-        <a href="#s1"><b>SARAN & PENGADUAN</b></a>
+        <a href="pengaduan.php"><b>SARAN & PENGADUAN</b></a>
         </div>
     </div>
 
