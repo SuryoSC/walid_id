@@ -96,12 +96,16 @@
                     <td class="px-4 py-3"><?= $item['tgl']; ?></td>
                     <td class="px-4 py-3"><?= ucfirst($item['kloter']); ?></td>
                     <td class="px-4 py-3"><?= ucfirst($item['status']); ?></td>
-                    <td class="px-4 py-3"><a href="konfirmasi_panggilan.php?id=<?php echo $item['id']?>" class="bg-sky-500 text-white px-3 py-1 rounded-sm hover:bg-sky-600">Panggil</a></td>
+                    <?php if ($item['status'] == "menunggu") : ?>
+                        <td class="px-4 py-3"><a href="konfirmasi_panggilan.php?id=<?php echo $item['id']?>" class="bg-sky-500 text-white px-3 py-1 rounded-sm hover:bg-sky-600">Panggil</a></td>
+                    <?php elseif ($item['status'] == "terpanggil") : ?>
+                        <td class="px-4 py-3"><span class="bg-gray-500 text-white px-3 py-1 rounded-sm">Terpanggil</span></td>
+                    <?php endif; ?>
                     <!-- <td class="px-4 py-3"><a href="konfirmasi_panggilan.php?id=<?php echo $item['id']?>" class="bg-white text-black px-3 py-1 rounded-sm hover:bg-sky-600">Isi Rekam Medis</a></td> -->
                     <?php if ($item['rekmed'] == "Tidak ada") : ?>
-                        <td class="px-4 py-3"><a href="konfirmasi_panggilan.php?id=<?php echo $item['id']?>" class="bg-gray-500 text-white px-3 py-1 rounded-sm hover:bg-sky-600 hover:text-white">Isi Rekam Medis</a></td>
+                        <td class="px-4 py-3"><a href="buat_rekmed.php?id=<?php echo $item['id']?>" class="bg-sky-500 text-white px-3 py-1 rounded-sm hover:bg-sky-600">Isi Rekam Medis</a></td>
                     <?php elseif ($item["rekmed"] == "Sudah Ada") : ?>
-                        <td class="px-4 py-3"><p class="px-3 py-1">Sudah dibuat</p></td>
+                        <td class="px-4 py-3"><span class="bg-gray-500 text-white px-3 py-1 rounded-sm">Telah dibuat</span></td>
                     <?php endif; ?>
                      
                 </tr>
