@@ -12,7 +12,8 @@
                 jadwal.tgl,
                 jadwal.kloter,
                 antrian.no,
-                antrian.status
+                antrian.status,
+                antrian.rekmed
             FROM antrian
             JOIN users ON antrian.pasien = users.id
             JOIN jadwal ON antrian.jadwal = jadwal.id
@@ -89,6 +90,7 @@
                     <td class="px-4 py-3"><?= $item['tgl']; ?></td>
                     <td class="px-4 py-3"><?= ucfirst($item['kloter']); ?></td>
                     <td class="px-4 py-3"><?= ucfirst($item['status']); ?></td>
+                    <!-- <td class="px-4 py-3"><?= ucfirst($item['rekmed']); ?></td> -->
                 </tr>
                 <?php endforeach; ?>
             </tbody>

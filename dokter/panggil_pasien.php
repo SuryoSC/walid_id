@@ -12,7 +12,8 @@
                 jadwal.tgl,
                 jadwal.kloter,
                 antrian.no,
-                antrian.status
+                antrian.status,
+                antrian.rekmed
             FROM antrian
             JOIN users ON antrian.pasien = users.id
             JOIN jadwal ON antrian.jadwal = jadwal.id
@@ -53,7 +54,7 @@
         </nav>
     </header>
     
-    <div class="mx-auto w-[860px] bg-gray-50 rounded-sm mb-16 p-6 shadow-md mt-10">
+    <div class="mx-auto w-[90%] bg-gray-50 rounded-sm mb-16 p-6 shadow-md mt-10">
         <form action="panggil_pasien.php" method="GET">
             <label for="id" class="block text-gray-700 font-medium mb-1">Pilih Jadwal</label>
             <select name="id" id="id" required class="border border-gray-300 rounded-lg px-4 py-2 mb-3 focus:ring-2 focus:ring-sky-400 focus:outline-none transition duration-200">
@@ -77,12 +78,13 @@
             <thead>
                 <tr class="text-white bg-sky-600">
                     <!-- <th class="px-4 py-3 text-left">ID</th> -->
-                    <th class="px-4 py-3 text-left">No Antrian</th>
-                    <th class="px-4 py-3 text-left">Pasien</th>
-                    <th class="px-4 py-3 text-left">Tanggal</th>
-                    <th class="px-4 py-3 text-left">Kloter</th>
-                    <th class="px-4 py-3 text-left">Status</th>
-                    <th class="px-4 py-3 text-left">Panggil</th>
+                    <th class="px-3 py-3 text-left">No Antrian</th>
+                    <th class="px-3 py-3 text-left">Pasien</th>
+                    <th class="px-3 py-3 text-left">Tanggal</th>
+                    <th class="px-3 py-3 text-left">Kloter</th>
+                    <th class="px-3 py-3 text-left">Status</th>
+                    <th class="px-3 py-3 text-left">Panggil</th>
+                    <th class="px-3 py-3 text-left">Rekam Medis</th>
                 </tr>
             </thead>
             <tbody class="bg-white text-gray-700">
@@ -95,6 +97,13 @@
                     <td class="px-4 py-3"><?= ucfirst($item['kloter']); ?></td>
                     <td class="px-4 py-3"><?= ucfirst($item['status']); ?></td>
                     <td class="px-4 py-3"><a href="konfirmasi_panggilan.php?id=<?php echo $item['id']?>" class="bg-sky-500 text-white px-3 py-1 rounded-sm hover:bg-sky-600">Panggil</a></td>
+                    <!-- <td class="px-4 py-3"><a href="konfirmasi_panggilan.php?id=<?php echo $item['id']?>" class="bg-white text-black px-3 py-1 rounded-sm hover:bg-sky-600">Isi Rekam Medis</a></td> -->
+                    <?php if ($item['rekmed'] == "Tidak ada") : ?>
+                        <td class="px-4 py-3"><a href="konfirmasi_panggilan.php?id=<?php echo $item['id']?>" class="bg-gray-500 text-white px-3 py-1 rounded-sm hover:bg-sky-600 hover:text-white">Isi Rekam Medis</a></td>
+                    <?php elseif ($item["rekmed"] == "Sudah Ada") : ?>
+                        <td class="px-4 py-3"><p class="px-3 py-1">Sudah dibuat</p></td>
+                    <?php endif; ?>
+                     
                 </tr>
                 <?php endforeach; ?>
             </tbody>
