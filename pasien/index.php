@@ -380,7 +380,7 @@
                 <a href="jadwalDokter.php"><b>JADWAL DOKTER</b></a>
               </div>
               <div class="f4">
-                <a href="#s1"><b>RIWAYAT PERIKSA PASIEN</b></a>
+                <a href="lihat_rekam_medis.php"><b>RIWAYAT PERIKSA PASIEN</b></a>
               </div>
             </div>
           </div>

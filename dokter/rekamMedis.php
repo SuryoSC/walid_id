@@ -2,7 +2,7 @@
 include "../service/koneksi.php";
 
 $id_antrian = $_GET['id'];
-echo''.$id_antrian.'';
+// echo''.$id_antrian.'';
 
 // Table Antrian
 $sql_antrian = "SELECT * FROM antrian WHERE id=$id_antrian";
@@ -12,8 +12,8 @@ $data_antrian = $result_antrian->fetch_assoc();
 $id_pasien = $data_antrian['pasien'];
 $id_jadwal = $data_antrian['jadwal'];
 
-echo''.$id_pasien.'';
-echo''.$id_jadwal.'';
+// echo''.$id_pasien.'';
+// echo''.$id_jadwal.'';
 
 
 // Table Users
@@ -47,11 +47,12 @@ if (isset($_POST["buat"])) {
     $sql_rekammedis = "INSERT INTO rekam_medis (pasien, keluhan, diagnosa) VALUES ($id_antrian, '$keluhan', '$diagnosa')";
     
     if($db->query($sql_rekammedis)){
-        echo "Berhasil dibuat";
+        // echo "Berhasil dibuat";
 
         $sql_buat_rekammedis = "UPDATE antrian SET rekmed='Terisi' WHERE id=$id_antrian";
 
         if(mysqli_query($db, $sql_buat_rekammedis)) {
+            header("location: panggil_pasien.php");
             // echo "Berhasil ";
             // header("location: panggil_pasien.php");
         }else {
@@ -59,7 +60,7 @@ if (isset($_POST["buat"])) {
         }
 
     }else {
-        echo "Gagal dibuat";
+        // echo "Gagal dibuat";
     }
 }
 
@@ -71,13 +72,22 @@ if (isset($_POST["buat"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rekam Medis</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f7f8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
             height: 100vh;
             margin: 0;
         }
@@ -106,6 +116,7 @@ if (isset($_POST["buat"])) {
         .form-row {
             display: flex;
             margin-bottom: 12px;
+            margin-top: 12px;
             align-items: center;
         }
 
@@ -135,7 +146,12 @@ if (isset($_POST["buat"])) {
     </style>
 </head>
 <body>
-    <form action="rekamMedis.php?id=<?php echo $id_antrian ?>" method="POST">
+    <header class="w-full">
+        <nav class="w-full h-[45px] bg-gray-50 border-b-2 border-gray-200 flex items-center px-4">
+            <div class=""><a href="panggil_pasien.php" class="flex items-center gap-1"><i class='bx bx-left-arrow-alt' class="" style="font-size: 20px;"></i><p class="font-medium translate-y-[1px]">kembali</p></a></div>
+        </nav>
+    </header>
+    <form action="rekamMedis.php?id=<?php echo $id_antrian ?>" method="POST" class="flex justify-center mt-8 px-80">
         <div class="container">
             <h2>Rekam Medis</h2>
 
@@ -162,8 +178,8 @@ if (isset($_POST["buat"])) {
                 <label for="diagnosa">Diagnosa:</label>
                 <input type="text" name="diagnosa" placeholder="Masukkan diagnosa..." required>
             </div>
-            <div>
-                <button type="submit" name="buat">Buat</button>
+            <div class="flex justify-end mt-8">
+                <button type="submit" name="buat" class="bg-sky-500 px-10 py-1 rounded-sm text-white hover:bg-sky-600">Buat Rekam Medis</button>
             </div>
         </div>
     </form>

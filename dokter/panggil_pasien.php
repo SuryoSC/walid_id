@@ -103,8 +103,8 @@
                     <?php endif; ?>
                     <!-- <td class="px-4 py-3"><a href="konfirmasi_panggilan.php?id=<?php echo $item['id']?>" class="bg-white text-black px-3 py-1 rounded-sm hover:bg-sky-600">Isi Rekam Medis</a></td> -->
                     <?php if ($item['rekmed'] == "Tidak ada") : ?>
-                        <td class="px-4 py-3"><a href="rekamMedis.php?id=<?php echo $item['id']?>" class="bg-sky-500 text-white px-3 py-1 rounded-sm hover:bg-sky-600">Isi Rekam Medis</a></td>
-                    <?php elseif ($item["rekmed"] == "Sudah Ada") : ?>
+                        <td class="px-4 py-3"><a href="rekamMedis.php?id=<?php echo $item['id']?>" class="bg-sky-500 text-white px-3 py-1 rounded-sm hover:bg-sky-600">Buat Rekam Medis</a></td>
+                    <?php elseif ($item["rekmed"] == "Terisi") : ?>
                         <td class="px-4 py-3"><span class="bg-gray-500 text-white px-3 py-1 rounded-sm">Telah dibuat</span></td>
                     <?php endif; ?>
                      
