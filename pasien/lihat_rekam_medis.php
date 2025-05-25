@@ -65,7 +65,7 @@
                     <td class="px-4 py-3"><?= $item['nama_pasien']; ?></td>
                     <td class="px-4 py-3"><?= $item['tgl']; ?></td>
                     <td class="px-4 py-3"><?= ucfirst($item['kloter']); ?></td>
-                    <td class="px-4 py-3"><a href="tampilan_rekam_medis.php?id=<?= $item['id']; ?>">Lihat</a></td>
+                    <td class="px-4 py-3"><a class="bg-sky-600 text-white px-5 py-1 rounded-sm" href="tampilan_rekam_medis.php?id=<?= $item['id']; ?>">Lihat</a></td>
                     <!-- <td class="px-4 py-3"><?= ucfirst($item['status']); ?></td> -->
                     <!-- <td class="px-4 py-3"><?= ucfirst($item['rekmed']); ?></td> -->
                 </tr>
