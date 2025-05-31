@@ -1,5 +1,10 @@
 <?php
 include "../service/koneksi.php";
+session_start();
+    if(!isset($_SESSION['id'])) {
+        header('location: login.php');
+        exit();
+}
 
 $id_antrian = $_GET['id'];
 // echo''.$id_antrian.'';
@@ -52,7 +57,7 @@ if (isset($_POST["buat"])) {
         $sql_buat_rekammedis = "UPDATE antrian SET rekmed='Terisi' WHERE id=$id_antrian";
 
         if(mysqli_query($db, $sql_buat_rekammedis)) {
-            header("location: panggil_pasien.php");
+            header("location: panggil.php");
             // echo "Berhasil ";
             // header("location: panggil_pasien.php");
         }else {

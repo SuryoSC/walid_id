@@ -1,5 +1,7 @@
 <?php
     include "../service/koneksi.php";
+    session_start();
+    include "../session/session_user.php";
 
     $id = $_GET['id'];
     // echo $id;
