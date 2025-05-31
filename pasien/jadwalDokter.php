@@ -1,5 +1,7 @@
 <?php
 include "../service/koneksi.php";
+session_start();
+include "../session/session_user.php";
 
 $dokter_query = mysqli_query($db, "SELECT id, nama FROM dokter");
 $dokter_map = [];

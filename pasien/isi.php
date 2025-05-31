@@ -1,6 +1,7 @@
 <?php
     include "../service/koneksi.php";
     session_start();
+    include "../session/session_user.php";
 
     $id_jadwal = $_GET["id"];
     // echo "jadwal id :" . $id_jadwal . "<br>";
