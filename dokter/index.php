@@ -49,7 +49,7 @@
         </div>
         <nav class="flex-1 px-6 py-4 space-y-4">
             <a href="#" class="block py-2 px-4 rounded-md text-gray-700 hover:bg-blue-100">📋 Rekam Medis</a>
-            <a href="panggil_pasien.php" class="block py-2 px-4 rounded-md text-gray-700 hover:bg-blue-100">📆 Panggil Pasien</a>
+            <a href="panggil.php" class="block py-2 px-4 rounded-md text-gray-700 hover:bg-blue-100">📆 Panggil Pasien</a>
             <form action="index.php" method="post" href="#" class=""><button type="submit" name="logout" class="w-full block py-2 px-4 rounded-md text-red-500 hover:bg-red-100 cursor-pointer text-left">🚪 Logout</button></form>
         </nav>
     </aside>
