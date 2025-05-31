@@ -24,7 +24,7 @@
 
         if(mysqli_query($db, $sql_update)) {
             echo "Berhasil dipanggil";
-            header("location: panggil_pasien.php");
+            header("location: panggil.php");
         }else {
             echo "panggilan gagal";
         }
