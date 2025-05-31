@@ -5,7 +5,7 @@
     $login_message = "";
 
     if(isset($_SESSION["is_login"])) {
-        header("location: login.php");
+        header("location: index.php");
 
     }
 
@@ -13,7 +13,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'
+        $sql = "SELECT * FROM dokter WHERE email='$email' AND password='$password'
         ";
         $result = $db->query($sql);
         
@@ -26,7 +26,6 @@
             $_SESSION["email"] = $data["email"];
             $_SESSION["password"] = $data["password"];
             $_SESSION["nama"] = $data["nama"];
-            $_SESSION["tanggal_lahir"] = $data["tanggal_lahir"];
             $_SESSION["is_login"] = true ;
 
             header("location: index.php");
@@ -47,6 +46,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,5 +90,15 @@
             </form>
         </div>
     </div>
+
+    <?php if($login_message === "gagal") : ?>
+       <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal!',
+                text: 'Akun tidak ditemukan, silahkan coba lagi.'
+            });
+       </script>
+    <?php endif; ?>
 </body>
 </html>

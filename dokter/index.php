@@ -1,3 +1,18 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['id'])) {
+        header('location: login.php');
+        exit();
+    }
+
+    if(isset($_POST["logout"])) {
+        session_unset();
+        session_destroy();
+        header("location: login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,29 +34,23 @@
         .primary-hover:hover {
             background-color: #009acd;
         }
-        img{
-            width: 130px;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+        
     </style>
 </head>
 
 <body class="bg-gray-100 min-h-screen flex">
 
     <!-- Sidebar -->
-    <aside class="w-64 bg-white shadow-lg flex flex-col ">
+    <aside class="w-64 bg-gray-50 shadow-lg flex flex-col ">
         <div class="text-center py-6 border-b flex flex-col items-center justify-center gap-2">
-            <img src="../assets/logo/walid_logo.jpg" alt="" class="w-32 h-32 rounded-full object-cover" >
+            <img src="../assets/logo/walid_logo.jpg" alt="" class="w-32 h-32" >
             <h1 class="text-2xl font-bold text-[#00BFFF]"> Walid ID</h1>
             <p class="text-sm text-gray-500">Dashboard Dokter</p>
         </div>
         <nav class="flex-1 px-6 py-4 space-y-4">
             <a href="#" class="block py-2 px-4 rounded-md text-gray-700 hover:bg-blue-100">📋 Rekam Medis</a>
             <a href="panggil_pasien.php" class="block py-2 px-4 rounded-md text-gray-700 hover:bg-blue-100">📆 Panggil Pasien</a>
-            <a href="#" class="block py-2 px-4 rounded-md text-red-500 hover:bg-red-100 mt-10">🚪 Logout</a>
+            <form action="index.php" method="post" href="#" class=""><button type="submit" name="logout" class="w-full block py-2 px-4 rounded-md text-red-500 hover:bg-red-100 cursor-pointer text-left">🚪 Logout</button></form>
         </nav>
     </aside>
 
