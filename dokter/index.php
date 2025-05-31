@@ -1,4 +1,5 @@
 <?php
+    include "../service/koneksi.php";
     session_start();
 
     if(!isset($_SESSION['id'])) {
@@ -11,6 +12,18 @@
         session_destroy();
         header("location: login.php");
     }
+
+    $nama_dokter = $_SESSION['nama'];
+    $id_dokter = $_SESSION['id'];
+    // echo $id_dokter;
+
+    $sql_dokter = "SELECT * FROM jadwal WHERE id=$id_dokter";
+    $result_dokter = $db->query($sql_dokter);
+    // var_dump($result_dokter);
+
+    $data_dokter = $result_dokter->fetch_assoc();
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -57,8 +70,8 @@
     <!-- Main Content -->
     <main class="flex-1 p-6">
         <header class="mb-6">
-            <h2 class="text-3xl font-bold text-gray-800">Selamat Datang, <span class="primary-text">dr. Walid</span></h2>
-            <p class="text-gray-600">Berikut ringkasan aktivitas hari ini</p>
+            <h2 class="text-3xl font-bold text-gray-800">Selamat Datang, <span class="primary-text">dr. <?= $nama_dokter ?></span></h2>
+            <p class="text-gray-600">Berikut ringkasan aktivitas</p>
         </header>
 
         <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
