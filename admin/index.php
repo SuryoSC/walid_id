@@ -164,7 +164,7 @@ if (isset($_POST["logout"])) {
         untuk mengelola sistem rumah sakit.</p>
     </div>
 
-    <div class="grid">
+    <!-- <div class="grid">
       <div class="info-box">
         <h3>15</h3>
         <p>Dokter Aktif</p>
@@ -181,21 +181,21 @@ if (isset($_POST["logout"])) {
         <h3>5</h3>
         <p>Reservasi Baru</p>
       </div>
-    </div>
+    </div> -->
 
     <!-- BAR CHART -->
     <div class="card card-success">
-      <!-- <div class="card-header">
-        <h3 class="card-title">Statistik Bulanan</h3>
-        <div class="card-tools">
+      <div class="card-header">
+        <h3 class="card-title">Jumlah Pendaftaran Pasien</h3>
+        <!-- <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse">
             <i class="fas fa-minus"></i>
           </button>
           <button type="button" class="btn btn-tool" data-card-widget="remove">
             <i class="fas fa-times"></i>
           </button>
-        </div>
-      </div> -->
+        </div> -->
+      </div>
       <div class="card-body">
         <div class="chart">
           <canvas id="barChart" style="min-height: 250px; height: 250px; max-width: 100%;"></canvas>
@@ -221,7 +221,6 @@ if (isset($_POST["logout"])) {
         $array[] = $row; // Simpan ke array
       }
     }
-
     $jml = count($array);
     
 
@@ -230,10 +229,10 @@ if (isset($_POST["logout"])) {
     $result_jadwal = mysqli_query($db, $sql_jadwal);
     $data_jadwal = [];
     while ($row = mysqli_fetch_assoc($result_jadwal)) {
-      $data_jadwal[] = $row; // Simpan ke array
+      $data_jadwal[] = $row;
     }
 
-    
+
   ?>
 
   <!-- Script -->
@@ -242,7 +241,7 @@ if (isset($_POST["logout"])) {
   <script src="../assets/theme/plugins/chart.js/Chart.min.js"></script>
   <script>
 
-    const a = parseInt(<?= $jml ?>);
+    // const a = parseInt(<?= $jml ?>);
 
     $(function () {
       const barChartCanvas = $('#barChart').get(0).getContext('2d');
@@ -253,24 +252,57 @@ if (isset($_POST["logout"])) {
 
         labels: [
           <?php foreach($data_jadwal as $item) :?>
+            <?php 
+
+              $id_jad = $item['id']; 
+              $sql = "SELECT * FROM antrian WHERE jadwal='$id_jad'";
+              $result = mysqli_query($db, $sql);
+              $array = [];
+
+              if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  $array[] = $row;
+                }
+              }
+              $jml = count($array); 
+            ?>
             '<?= $item['tgl'];?>, <?= $item['kloter'];?>',
           <?php endforeach; ?>
         ],
 
         datasets: [
+          // {
+          //   label: 'Jumlah Pasien',
+          //   backgroundColor: '#00BFFF',
+          //   borderColor: '#0099CC',
+          //   data: [44, 40, 35, 50, 45, 45, 48]
+          // }
+
           {
-            label: 'Pagi',
+            label: 'Jumlah Pasien',
             backgroundColor: '#00BFFF',
             borderColor: '#0099CC',
-            data: [a, 40, 35, 50, 45, 45]
+            data: [
+              // 44, 40, 35, 50, 45, 45, 48
+              <?php foreach($data_jadwal as $item) : ?>
+                <?php 
+                  $id_jad = $item['id']; 
+                  $sql = "SELECT * FROM antrian WHERE jadwal='$id_jad'";
+                  $result = mysqli_query($db, $sql);
+                  $array = [];
+
+                  if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                      $array[] = $row;
+                    }
+                  }
+                  $jml = count($array); 
+                ?>
+                <?= $jml?>,
+              <?php endforeach; ?>
+            ]
           }
-          // ,
-          // {
-          //   label: 'Sore',
-          //   backgroundColor: '#FFA07A',
-          //   borderColor: '#FF6347',
-          //   data: [a, 40, 35, 50, 36, 43, 50]
-          // }
+
         ]
       };
 

@@ -30,7 +30,7 @@
 
     // Ambil semua jadwal untuk dropdown
     $id_dokter = $_SESSION["id"];
-    echo $id_dokter;
+    // echo $id_dokter;
 
     $select_tanggal = "SELECT id, tgl, kloter FROM jadwal WHERE dokter=$id_dokter";
     $result_tanggal = $db->query($select_tanggal);
