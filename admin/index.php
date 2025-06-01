@@ -1,5 +1,18 @@
 <?php
 
+  session_start();
+
+  if(!isset($_SESSION["id"])) {
+    header("location: login.php");
+    exit();
+  }
+
+  if(isset($_POST["logout"])) {
+    session_unset();
+    session_destroy();
+    header("location: login.php");
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -11,11 +24,11 @@
   <style>
     * {
       box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f2f9ff;
     }
 
@@ -45,6 +58,29 @@
       padding: 15px 25px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
+    }
+
+    .sidebar form {
+      display: block;
+      text-decoration: none;
+    }
+
+    .sidebar form .btn-logout {
+      display: block;
+      background: none;
+      border: none;
+      font-weight: bold;
+      color: white;
+      padding: 15px 25px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+    }
+
+    .sidebar form .btn-logout:hover {
+      background-color: #00BFFF;
     }
 
     .sidebar a:hover {
@@ -120,10 +156,12 @@
     </div>
     
     <a href="#">Beranda</a>
-    <a href="#">Tambah Dokter</a>
-    <a href="#">Jadwal Dokter</a>
-    <a href="#">Saran & Keluhan</a>
-    <a href="#">Logout</a>
+    <a href="tambah_dokter.php">Tambah Dokter</a>
+    <a href="buat_jadwal.php">Buat Jadwal Dokter</a>
+    <!-- <a href="#">Logout</a> -->
+    <form action="index.php" method="post">
+      <button type="submit" name="logout" class="btn-logout">Logout</button>
+    </form>
   </div>
 
   <div class="content">

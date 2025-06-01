@@ -1,6 +1,13 @@
 <?php
     include("../service/koneksi.php");
 
+    session_start();
+
+    if(!isset($_SESSION["id"])) {
+        header("location: login.php");
+        exit();
+    }
+
     $tambah_dokter_message = "";
 
     if(isset($_POST["tambah_dokter"])) {
