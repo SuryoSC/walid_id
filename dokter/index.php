@@ -23,6 +23,7 @@
 
     $data_dokter = $result_dokter->fetch_assoc();
     
+    $sql_antrian = "SELECT * FROM antrian WHERE ";
 
 ?>
 
@@ -61,8 +62,8 @@
             <p class="text-sm text-gray-500">Dashboard Dokter</p>
         </div>
         <nav class="flex-1 px-6 py-4 space-y-4">
-            <a href="#" class="block py-2 px-4 rounded-md text-gray-700 hover:bg-blue-100">📋 Rekam Medis</a>
-            <a href="panggil.php" class="block py-2 px-4 rounded-md text-gray-700 hover:bg-blue-100">📆 Panggil Pasien</a>
+            <a href="jadwal_dokter.php" class="block py-2 px-4 rounded-md text-gray-700 hover:bg-blue-100">📋 Jadwal Dokter</a>
+            <a href="panggil.php" class="block py-2 px-4 rounded-md text-gray-700 hover:bg-blue-100">📆 Panggil Pasien &<br>📋 Buat Rekam Medis</a>
             <form action="index.php" method="post" href="#" class=""><button type="submit" name="logout" class="w-full block py-2 px-4 rounded-md text-red-500 hover:bg-red-100 cursor-pointer text-left">🚪 Logout</button></form>
         </nav>
     </aside>
@@ -71,10 +72,10 @@
     <main class="flex-1 p-6">
         <header class="mb-6">
             <h2 class="text-3xl font-bold text-gray-800">Selamat Datang, <span class="primary-text">dr. <?= $nama_dokter ?></span></h2>
-            <p class="text-gray-600">Berikut ringkasan aktivitas</p>
+            <!-- <p class="text-gray-600">Berikut ringkasan aktivitas</p> -->
         </header>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <!-- <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
             <div class="bg-white rounded-lg shadow p-6 border-l-4 border-[#00BFFF]">
                 <h3 class="text-xl font-semibold text-gray-800">📄 Total Rekam Medis</h3>
                 <p class="text-3xl font-bold mt-2 text-[#00BFFF]">152</p>
@@ -86,9 +87,9 @@
                 <p class="text-3xl font-bold mt-2 text-[#00BFFF]">5 Pasien</p>
                 <p class="text-gray-500 mt-1">Pemeriksaan terjadwal untuk hari ini</p>
             </div>
-        </section>
+        </section> -->
 
-        <section>
+        <!-- <section>
             <h3 class="text-2xl font-bold text-gray-800 mb-4">Akses Cepat</h3>
             <div class="flex flex-wrap gap-4">
                 <a href="#"
@@ -100,7 +101,7 @@
                     📋 Lihat Semua Rekam Medis
                 </a>
             </div>
-        </section>
+        </section> -->
     </main>
 
 </body>
