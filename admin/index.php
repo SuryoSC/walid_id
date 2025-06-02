@@ -149,9 +149,10 @@ if (isset($_POST["logout"])) {
     <div style="display: flex; justify-content: center;">
       <img class="logo" src="../assets/logo/walid_logo.jpg" alt="">
     </div>
-    <a href="#">Beranda</a>
+    <!-- <a href="#">Beranda</a> -->
     <a href="tambah_dokter.php">Tambah Dokter</a>
     <a href="buat_jadwal.php">Buat Jadwal Dokter</a>
+    <a href="lihat_jadwal.php">Lihat Jadwal Dokter</a>
     <form action="index.php" method="post">
       <button type="submit" name="logout" class="btn-logout">Logout</button>
     </form>
