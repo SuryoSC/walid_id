@@ -33,7 +33,14 @@ if (isset($_POST['submit'])) {
     <title>Buat Jadwal</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
         :root {
             --main-blue: #00BFFF;
         }
@@ -46,9 +53,15 @@ if (isset($_POST['submit'])) {
     </style>
 </head>
 
-<body class="min-h-screen bg-gradient-to-br from-white via-sky-100 to-blue-100 flex items-center justify-center p-6">
+<body class="min-h-screen bg-gradient-to-br from-white via-sky-100 to-blue-100 flex items-center flex-col">
 
-    <div class="bg-white shadow-2xl rounded-xl w-full max-w-md p-8 transition-all">
+    <header class="w-full">
+        <nav class="w-full h-[45px] bg-gray-50 border-b-2 border-gray-200 flex items-center px-4">
+            <div class=""><a href="index.php" class="flex items-center gap-1"><i class='bx bx-left-arrow-alt' class="" style="font-size: 20px;"></i><p class="font-medium translate-y-[1px]">kembali</p></a></div>
+        </nav>
+    </header>
+
+    <div class="bg-white shadow-2xl rounded-xl w-full max-w-md p-8 transition-all m-14">
         <h2 class="text-3xl font-extrabold text-center text-[#00BFFF] mb-6"> Buat Jadwal Pemeriksaan</h2>
 
         <form action="buat_jadwal.php" method="POST" class="space-y-5">
@@ -86,10 +99,7 @@ if (isset($_POST['submit'])) {
             </div>
 
             <div>
-                <button type="submit" name="submit"
-                    class="btn-blue w-full text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 text-lg">
-                    Simpan Jadwal
-                </button>
+                <button type="submit" name="submit"class="btn-blue w-full text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 text-lg">Simpan Jadwal</button>
             </div>
         </form>
     </div>
