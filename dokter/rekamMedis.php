@@ -153,7 +153,7 @@ if (isset($_POST["buat"])) {
 <body>
     <header class="w-full">
         <nav class="w-full h-[45px] bg-gray-50 border-b-2 border-gray-200 flex items-center px-4">
-            <div class=""><a href="panggil_pasien.php" class="flex items-center gap-1"><i class='bx bx-left-arrow-alt' class="" style="font-size: 20px;"></i><p class="font-medium translate-y-[1px]">kembali</p></a></div>
+            <div class=""><a href="panggil.php" class="flex items-center gap-1"><i class='bx bx-left-arrow-alt' class="" style="font-size: 20px;"></i><p class="font-medium translate-y-[1px]">kembali</p></a></div>
         </nav>
     </header>
     <form action="rekamMedis.php?id=<?php echo $id_antrian ?>" method="POST" class="flex justify-center mt-8 px-80">

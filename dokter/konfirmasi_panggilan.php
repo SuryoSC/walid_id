@@ -57,7 +57,7 @@
     <div class="w-[30%] bg-gray-50 border-1 border-gray-300 rounded-sm flex flex-col items-center py-5">
         <p>KONFIRMASI PANGGILAN</p>
         <form action="konfirmasi_panggilan.php?id=<?php echo $id_antrian ?>" method="POST" class="w-full px-10 flex gap-4 justify-between mt-10">
-            <a href="panggil_pasien.php" class="bg-gray-200 py-1 rounded-sm w-[120px] cursor-pointer hover:bg-gray-300 text-center">Batal</a>
+            <a href="panggil.php" class="bg-gray-200 py-1 rounded-sm w-[120px] cursor-pointer hover:bg-gray-300 text-center">Batal</a>
             <button type="submit" name="konfirmasi" class="bg-gray-200 py-1 rounded-sm w-[120px] cursor-pointer hover:bg-gray-300">konfirmasi</button>
         </form>
     </div>
