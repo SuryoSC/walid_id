@@ -353,7 +353,7 @@
           <div class="navbaw">
             <a href="#"><b>BERANDA</b></a>
             <a href="about.php"><b>TENTANG</b></a>
-            <a href="#s1"><b>LAYANAN</b></a>
+            <!-- <a href="#s1"><b>LAYANAN</b></a> -->
             <a href="pengaduan.php"><b>SARAN & PENGADUAN</b></a>
           </div>
       </div>
@@ -390,7 +390,7 @@
       </div>
 
       <div class="runningtext">
-        <span><b>SELAMAT DATANG DI WALID.ID | PENDAFTARAN ONLINE DAPAT DILAKUKAN SEHARI SEBELUMNYA MULAI PUKUL 13.00 WIB <!-- | SEMOGA HARIMU MENYENANGKAN  --></b></span>
+        <span><b>SELAMAT DATANG DI WALID.ID | SEMOGA HARIMU MENYENANGKAN </b></span>
       </div>
 
       <div class="galery">

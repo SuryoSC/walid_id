@@ -434,7 +434,7 @@ if (isset($_POST["kirim"])) {
         <div class="navbaw">
             <a href="index.php"><b>BERANDA</b></a>
             <a href="about.php"><b>TENTANG</b></a>
-            <a href="#s1"><b>LAYANAN</b></a>
+            <!-- <a href="#s1"><b>LAYANAN</b></a> -->
             <a href="pengaduan.php"><b>SARAN & PENGADUAN</b></a>
         </div>
     </nav>
